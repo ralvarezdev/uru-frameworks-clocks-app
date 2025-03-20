@@ -8,6 +8,9 @@ import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+// Constants
+const PORT = process.env['URU_FRAMEWORKS_CLOCKS_API_PORT']
+
 // Resolve the paths to the server and browser distribution folders
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
@@ -59,7 +62,7 @@ app.use('/**', (req, res, next) => {
  * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
  */
 if (isMainModule(import.meta.url)) {
-  const port = process.env['URU_FRAMEWORKS_CLOCKS_PORT'];
+  const port = PORT;
   app.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
