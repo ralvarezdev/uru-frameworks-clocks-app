@@ -62,6 +62,7 @@ export class AuthService {
 
   // Check if the user is authenticated
   get isAuthenticated(): boolean {
+    console.log(this.afAuth.currentUser);
     return this.afAuth.currentUser !== null;
   }
 }
