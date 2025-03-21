@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {validateEnvironmentKeys} from '../environment';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +9,4 @@ import {validateEnvironmentKeys} from '../environment';
 })
 export class AppComponent {
   title = 'uru-frameworks-clocks';
-
-  constructor() {
-    validateEnvironmentKeys();
-  }
 }

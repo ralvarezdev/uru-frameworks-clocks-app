@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
-import {environment} from '../../../../environment';
+import {AuthService} from '../services/auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NotAuthGuard implements CanActivate {
-  constructor(private router: Router, private cookieService: CookieService) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   canActivate(): boolean {
-    const isAuthenticated = this.cookieService.check(environment['COOKIE_ACCESS_TOKEN_NAME']);
-    if (!isAuthenticated) {
+    if (!this.authService.isAuthenticated) {
       return true; // Allow navigation
     } else {
       this.router.navigateByUrl('/dashboard', { skipLocationChange: false });

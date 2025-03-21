@@ -1,26 +1,26 @@
 import { TestBed } from '@angular/core/testing';
 import {CanActivateFn, Router} from '@angular/router';
 import { NotAuthGuard } from './not-auth.guard';
-import {CookieService} from 'ngx-cookie-service';
+import {AuthService} from '../services/auth.service';
 
 describe('NotAuthGuard', () => {
   let router: Router;
-  let cookieService: CookieService;
+  let authService: AuthService;
 
   const executeGuard: CanActivateFn = () => {
-    const guard = new NotAuthGuard(router, cookieService);
+    const guard = new NotAuthGuard(router, authService);
     return TestBed.runInInjectionContext(() => guard.canActivate());
   };
 
  beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        { provide: Router, useValue: jasmine.createSpyObj('Router', ['navigate']) },
-        { provide: CookieService, useValue: jasmine.createSpyObj('CookieService', ['check']) }
+        { provide: Router, useValue: jasmine.createSpyObj('Router', ['navigateByUrl']) },
+        { provide: AuthService, useValue: jasmine.createSpyObj('AuthService', ['isAuthenticated']) }
       ]
     });
     router = TestBed.inject(Router);
-    cookieService = TestBed.inject(CookieService);
+    authService = TestBed.inject(AuthService);
   });
 
   it('should be created', () => {
