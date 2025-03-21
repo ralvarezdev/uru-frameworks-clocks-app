@@ -1,68 +1,36 @@
 import { Injectable } from '@angular/core';
-import {AngularFireAuth} from '@angular/fire/compat/auth';
-import firebase from 'firebase/compat/app';
+import {ApiService} from '../../../shared/services/api.service';
+import {CookieService} from 'ngx-cookie-service';
+import {environment} from '../../../../environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private afAuth: AngularFireAuth) {}
+  constructor(private apiService: ApiService, private cookieService: CookieService) {}
 
   // Sign in with email/password
   signUp(email: string, password: string) {
-    this.afAuth.createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        // Sign up successful
-        console.log('Sign up successful');
-      })
-      .catch((error) => {
-        // An error occurred
-        console.error('An error occurred: ', error);
-      });
+    return this.apiService.fetch('/sign-up', {email, password})
   }
 
   // Sign in with Google
   signInWithGoogle() {
-    return this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
-    .then((result) => {
-      // Sign in successful
-      console.log('Sign in successful');
-    })
-    .catch((error) => {
-      // An error occurred
-      console.error('An error occurred: ', error);
-    });
+    return this.apiService.fetch('/sign-in/google', {})
   }
 
   // Sign in with email/password
-  login(email: string, password: string) {
-    this.afAuth.signInWithEmailAndPassword(email, password)
-      .then(() => {
-        // Login successful
-        console.log('Login successful');
-      })
-      .catch((error) => {
-        // An error occurred
-        console.error('An error occurred: ', error);
-      });
+  signIn(email: string, password: string) {
+    return this.apiService.fetch('/sign-in', {email, password})
   }
 
   // Sign out
-  logout() {
-    this.afAuth.signOut()
-      .then(() => {
-        // Logout successful
-        console.log('Logout successful');
-      })
-      .catch((error) => {
-        // An error occurred
-        console.error('An error occurred: ', error);
-      });
+  signOut() {
+    return this.apiService.fetch('/sign-out', {})
   }
 
   // Check if the user is authenticated
   get isAuthenticated(): boolean {
-    console.log(this.afAuth.currentUser);
-    return this.afAuth.currentUser !== null;
+    return this.cookieService.check(environment['COOKIE_ACCESS_TOKEN_NAME'])
   }
 }

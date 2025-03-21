@@ -30,6 +30,6 @@ export const routes: Routes = [
   {path: 'clocks/rgb', component: RgbClockComponent, canActivate:[AuthGuard]},
   {path: 'clocks/roman', component: RomanClockComponent, canActivate:[AuthGuard]},
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
-  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent},
 ];
