@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import {LoginComponent} from './features/auth/components/login/login.component';
-import {SignupComponent} from './features/auth/components/signup/signup.component';
+import {SignInComponent} from './features/auth/components/sign-in/sign-in.component';
+import {SignUpComponent} from './features/auth/components/sign-up/sign-up.component';
 import {AbacusClockComponent} from './features/clocks/components/abacus-clock/abacus-clock.component';
 import {AnalogClockComponent} from './features/clocks/components/analog-clock/analog-clock.component';
 import {BinaryClockComponent} from './features/clocks/components/binary-clock/binary-clock.component';
@@ -17,8 +17,8 @@ import {AuthGuard} from './features/auth/guards/auth.guard';
 import {NotAuthGuard} from './features/auth/guards/not-auth.guard';
 
 export const routes: Routes = [
-  {path: 'login', component: LoginComponent, canActivate:[NotAuthGuard]},
-  {path: 'signup', component: SignupComponent, canActivate:[NotAuthGuard]},
+  {path: 'login', component: SignInComponent, canActivate:[NotAuthGuard]},
+  {path: 'signup', component: SignUpComponent, canActivate:[NotAuthGuard]},
   {path: 'clocks/abacus', component: AbacusClockComponent, canActivate:[AuthGuard]},
   {path: 'clocks/analog', component: AnalogClockComponent, canActivate:[AuthGuard]},
   {path: 'clocks/binary', component: BinaryClockComponent, canActivate:[AuthGuard]},

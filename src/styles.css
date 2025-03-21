@@ -1,6 +1,75 @@
+/* Archivo Black font */
+@font-face {
+    font-family: 'Archivo Black';
+    src: url('/src/assets/fonts/ArchivoBlack-Regular.ttf') format('truetype');
+}
+
 /* Global reset for the app */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Global styles */
+:root {
+  --color--dark-primary: #c92a2a;
+  --color--medium-primary: #fa5252;
+  --color--light-primary: #ff6b6b;
+  --grey--darkest: #212529;
+  --grey--darker: #343a40;
+  --grey--dark: #868e96;
+  --grey--medium: #adb5bd;
+  --grey--light: #e9ecef;
+  --grey--lighter: #f1f3f5;
+  --grey--lightest: #f8f9fa;
+  --gap--small: 0.5rem;
+  --gap--medium: 1rem;
+  --gap--large: 2rem;
+  --font-size--extra-small: 0.8rem;
+  --font-size--small: 1rem;
+  --font-size--medium: 1.5rem;
+  --font-size--large: 2rem;
+  --font-size--extra-large: 3rem;
+  --font-weight--light: 300;
+  --font-weight--regular: 400;
+  --font-weight--medium: 500;
+  --font-weight--bold: 700;
+  --padding--small: 0.5rem;
+  --padding--medium: 1rem;
+  --padding--large: 2rem;
+  --border-radius--small: 0.5rem;
+  --border-radius--medium: 1rem;
+  --border-radius--large: 2rem;
+  --box-shadow--small: 0 0 10px rgba(0, 0, 0, 0.1);
+  --box-shadow--medium: 0 0 20px rgba(0, 0, 0, 0.1);
+  --box-shadow--large: 0 0 30px rgba(0, 0, 0, 0.1);
+  --absolute--top: 3rem;
+  --absolute--right: 5rem;
+  --transition--color--duration: 0.3s;
+}
+
+/* Header styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: var(--font-size--extra-large);
+  font-weight: var(--font-weight--bold);
+}
+
+h2, h3 {
+  font-size: var(--font-size--large);
+  font-weight: var(--font-weight--medium);
+}
+
+h4, h5 {
+  font-size: var(--font-size--medium);
+  font-weight: var(--font-weight--regular);
+}
+
+h6 {
+  font-size: var(--font-size--small);
+  font-weight: var(--font-weight--light);
 }
