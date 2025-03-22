@@ -1,4 +1,5 @@
-.abacus-clock {
+/* Abacus clock */
+.abacus-clock-container {
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -6,30 +7,29 @@
   margin: auto;
 }
 
-.time-unit {
+/* Time unit */
+.abacus-clock-container__time-unit {
   text-align: center;
 }
 
-.label {
-  font-size: 14px;
-  color: #000;
-  margin-bottom: 5px;
-}
-
-.beads {
+/* Beads */
+.abacus-clock-container__time-unit__beads {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+/* Bead */
 .bead {
-  width: 10px;
-  height: 10px;
-  margin: 2px;
-  background-color: #ccc;
+  width: 1rem;
+  height: 1rem;
+  margin: var(--margin--small);
+  background-color: var(--grey--medium);
   border-radius: 50%;
+  transition: background-color var(--transition--color--duration);
 }
 
+/* Active bead */
 .bead.active {
-  background-color: #000;
+  background-color: var(--color--dark-primary);
 }

@@ -1,14 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {ClockLayoutComponent} from "../layout/layout.component";
 import {TimeService} from '../../services/time.service';
-import {DecimalPipe, NgForOf} from '@angular/common';
+import {NgForOf} from '@angular/common';
 import {LabelComponent} from '../../../../shared/components/label/label.component';
 
 @Component({
   selector: 'app-led-clock',
   imports: [
     ClockLayoutComponent,
-    DecimalPipe,
     LabelComponent,
     NgForOf
   ],
