@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "uru-frameworks-clocks": {
+    "uru-frameworks-clocks-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/uru-frameworks-clocks",
+            "outputPath": "dist/uru-frameworks-clocks-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -34,12 +34,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -69,16 +64,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "uru-frameworks-clocks:build:production"
+              "buildTarget": "uru-frameworks-clocks-app:build:production"
             },
             "development": {
-              "buildTarget": "uru-frameworks-clocks:build:development"
+              "buildTarget": "uru-frameworks-clocks-app:build:development"
             }
           },
-          "defaultConfiguration": "development",
-          "options": {
-            "port": 8080
-          }
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"

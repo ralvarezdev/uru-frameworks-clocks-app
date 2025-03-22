@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {ApiService} from '../../../../shared/services/api.service';
 import {CookieService} from 'ngx-cookie-service';
-import {environment} from '../../../../../environment';
+//import {environment} from '../../../../../environment';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +31,7 @@ export class AuthService {
 
   // Check if the user is authenticated
   get isAuthenticated(): boolean {
-    return this.cookieService.check(environment['COOKIE_ACCESS_TOKEN_NAME'])
+    //    return this.cookieService.check(environment['COOKIE_ACCESS_TOKEN_NAME'])
+    return this.cookieService.check('access_token')
   }
 }

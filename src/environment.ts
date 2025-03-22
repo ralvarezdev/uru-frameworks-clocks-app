@@ -1,5 +1,5 @@
 import "dotenv/config";
-
+/*
 // Environment variables keys
 export const environmentKeys: Record<string, string> = {
   HOST: 'URU_FRAMEWORKS_CLOCKS_API_HOST',
@@ -24,3 +24,4 @@ export function validateEnvironmentKeys(): void {
 
 // Validate the environment keys
 validateEnvironmentKeys();
+*/

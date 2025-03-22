@@ -13,7 +13,7 @@ export class TimeService {
   increaseBySeconds(seconds: number){
     this.#seconds.update((currentSeconds)=>{
       const secondsRemainder = (currentSeconds+seconds)%60
-      const minutesPassed=(currentSeconds+seconds)/60
+      const minutesPassed=Math.floor((currentSeconds+seconds)/60)
 
       // Increase the minutes signal if there was a remainder
       this.increaseByMinutes(minutesPassed)
@@ -27,13 +27,13 @@ export class TimeService {
   increaseByMinutes(minutes: number){
     this.#minutes.update((currentMinutes)=>{
       const minutesRemainder = (currentMinutes+minutes)%60
-      const hoursPassed=(currentMinutes+minutes)/60
+      const hoursPassed= Math.floor((currentMinutes+minutes)/60)
 
       // Increase the hours signal if there was a remainder
       this.increaseByHours(hoursPassed)
 
       // Increase the seconds signal
-      return minutes
+      return minutesRemainder
     })
   }
 

@@ -1,24 +1,46 @@
-import {Component, EventEmitter, Input, Output, signal} from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Inject,
+  Input,
+  OnInit,
+  Output,
+  PLATFORM_ID,
+} from '@angular/core';
 import {LabelComponent} from '../label/label.component';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
+import {isPlatformBrowser, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   imports: [
     LabelComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgIf,
   ],
   styleUrl: './slider.component.css'
 })
-export class SliderComponent {
+export class SliderComponent implements OnInit {
+  isBrowser: boolean = false;
+  @Input() valueControl: FormControl = new FormControl();
   @Input() initialValue: number = 0;
-  valueControl = new FormControl(this.initialValue);
-  @Output() valueChange: EventEmitter<number|null> = new EventEmitter<number|null>();
-
   @Input() id: string = '';
   @Input() label: string = 'Slider';
   @Input() min: number = 0;
   @Input() max: number = 100;
   @Input() step: number = 1;
+  @Input() disabled: boolean = false;
+  @Output() valueChange: EventEmitter<number|null> = new EventEmitter<number|null>();
+
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {
+      this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+
+  // On init
+  ngOnInit(): void {
+    if (this.isBrowser) {
+      this.valueControl.valueChanges.subscribe(value => this.valueChange.emit(value));
+    }
+  }
 }

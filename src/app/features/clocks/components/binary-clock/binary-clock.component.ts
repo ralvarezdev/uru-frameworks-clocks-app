@@ -20,12 +20,11 @@ export class BinaryClockComponent implements OnInit {
   // On init, update the time and set an interval to update the time every second
   ngOnInit(): void {
     this.updateTime();
-    /*
     setInterval(() =>  {
       console.log('Updating Binary Clock');
+      this.timeService.increaseBySeconds(1)
       this.updateTime()
     }, 1000);
-    */
   }
 
   // Update the time by converting the hours, minutes, and seconds to binary
