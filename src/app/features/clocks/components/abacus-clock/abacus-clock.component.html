@@ -1,3 +1,22 @@
 <app-clock-layout>
-  <p>abacus-clock works!</p>
+  <div class="abacus-clock">
+    <div class="time-unit">
+      <div class="label">Hours</div>
+      <div class="beads">
+        <div *ngFor="let bead of getBeads(hours, 24)" class="bead" [class.active]="bead"></div>
+      </div>
+    </div>
+    <div class="time-unit">
+      <div class="label">Minutes</div>
+      <div class="beads">
+        <div *ngFor="let bead of getBeads(minutes, 60)" class="bead" [class.active]="bead"></div>
+      </div>
+    </div>
+    <div class="time-unit">
+      <div class="label">Seconds</div>
+      <div class="beads">
+        <div *ngFor="let bead of getBeads(seconds, 60)" class="bead" [class.active]="bead"></div>
+      </div>
+    </div>
+  </div>
 </app-clock-layout>

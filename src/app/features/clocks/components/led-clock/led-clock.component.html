@@ -1,3 +1,16 @@
 <app-clock-layout>
-  <p>led-clock works!</p>
+  <div class="led-clock">
+    <div class="time-unit">
+      <div class="led">{{ hours | number: '2.0' }}</div>
+      <div class="label">Hours</div>
+    </div>
+    <div class="time-unit">
+      <div class="led">{{ minutes | number: '2.0' }}</div>
+      <div class="label">Minutes</div>
+    </div>
+    <div class="time-unit">
+      <div class="led">{{ seconds | number: '2.0' }}</div>
+      <div class="label">Seconds</div>
+    </div>
+  </div>
 </app-clock-layout>

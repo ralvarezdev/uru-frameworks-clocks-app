@@ -1,0 +1,20 @@
+.clock {
+  width: 200px;
+  height: 200px;
+}
+
+.clock-face {
+  fill: white;
+  stroke: black;
+  stroke-width: 2px;
+}
+
+.hour-hand, .minute-hand, .second-hand {
+  stroke: black;
+  stroke-width: 2px;
+  stroke-linecap: round;
+}
+
+.second-hand {
+  stroke: red;
+}

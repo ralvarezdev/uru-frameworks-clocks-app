@@ -1,3 +1,22 @@
 <app-clock-layout>
-  <p>mosaic-clock works!</p>
+  <div class="mosaic-clock">
+    <div class="time-unit">
+      <div class="label">Hours</div>
+      <div class="mosaic">
+        <div *ngFor="let tile of getMosaic(hours, 24)" class="tile" [class.active]="tile"></div>
+      </div>
+    </div>
+    <div class="time-unit">
+      <div class="label">Minutes</div>
+      <div class="mosaic">
+        <div *ngFor="let tile of getMosaic(minutes, 60)" class="tile" [class.active]="tile"></div>
+      </div>
+    </div>
+    <div class="time-unit">
+      <div class="label">Seconds</div>
+      <div class="mosaic">
+        <div *ngFor="let tile of getMosaic(seconds, 60)" class="tile" [class.active]="tile"></div>
+      </div>
+    </div>
+  </div>
 </app-clock-layout>

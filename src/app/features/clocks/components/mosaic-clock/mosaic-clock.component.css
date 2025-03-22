@@ -1,0 +1,35 @@
+.mosaic-clock {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.time-unit {
+  text-align: center;
+}
+
+.label {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+.mosaic {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tile {
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  background-color: #ccc;
+  border-radius: 2px;
+}
+
+.tile.active {
+  background-color: #000;
+}

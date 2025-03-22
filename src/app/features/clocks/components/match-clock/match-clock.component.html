@@ -1,3 +1,21 @@
 <app-clock-layout>
-  <p>match-clock works!</p>
+  <div class="seven-segment-clock">
+    <div class="time-unit" *ngFor="let digit of hours.split('')">
+      <div class="seven-segment">
+        <div class="segment" *ngFor="let segment of getSegments(digit)" [class.active]="segment"></div>
+      </div>
+    </div>
+    <div class="colon">:</div>
+    <div class="time-unit" *ngFor="let digit of minutes.split('')">
+      <div class="seven-segment">
+        <div class="segment" *ngFor="let segment of getSegments(digit)" [class.active]="segment"></div>
+      </div>
+    </div>
+    <div class="colon">:</div>
+    <div class="time-unit" *ngFor="let digit of seconds.split('')">
+      <div class="seven-segment">
+        <div class="segment" *ngFor="let segment of getSegments(digit)" [class.active]="segment"></div>
+      </div>
+    </div>
+  </div>
 </app-clock-layout>

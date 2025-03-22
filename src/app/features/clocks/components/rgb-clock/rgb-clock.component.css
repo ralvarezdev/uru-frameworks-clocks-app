@@ -1,0 +1,19 @@
+.rgb-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.time-unit {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}

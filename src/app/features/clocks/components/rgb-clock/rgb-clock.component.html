@@ -1,3 +1,7 @@
 <app-clock-layout>
-  <p>rgb-clock works!</p>
+    <div class="rgb-clock">
+    <div [style.background-color]="hourColor" class="time-unit">Hours: {{ hours }}</div>
+    <div [style.background-color]="minuteColor" class="time-unit">Minutes: {{ minutes }}</div>
+    <div [style.background-color]="secondColor" class="time-unit">Seconds: {{ seconds }}</div>
+  </div>
 </app-clock-layout>
