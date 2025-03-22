@@ -5,7 +5,7 @@
   width: 100%;
   max-width: 600px;
   margin: auto;
-  gap: var(--gap--medium);
+  gap: var(--gap--small);
 }
 
 /* Time unit */
@@ -18,13 +18,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: var(--gap--small);
 }
 
 /* Bead */
 .bead {
   width: 1rem;
   height: 1rem;
-  margin: var(--margin--small);
   background-color: var(--grey--medium);
   border-radius: 50%;
   transition: background-color var(--transition--color--duration);

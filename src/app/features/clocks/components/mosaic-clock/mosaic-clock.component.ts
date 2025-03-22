@@ -46,9 +46,9 @@ export class MosaicClockComponent implements OnInit {
     this.hours = this.timeService.hours;
     this.minutes = this.timeService.minutes;
     this.seconds = this.timeService.seconds;
-    this.hoursMosaic = this.getMosaic(this.hours, 23);
-    this.minutesMosaic = this.getMosaic(this.minutes, 59);
-    this.secondsMosaic = this.getMosaic(this.seconds, 59);
+    this.hoursMosaic = this.getMosaic(this.hours, 24);
+    this.minutesMosaic = this.getMosaic(this.minutes, 60);
+    this.secondsMosaic = this.getMosaic(this.seconds, 60);
   }
 
   // Convert a number to a mosaic array

@@ -73,7 +73,7 @@ export class MatchClockComponent implements OnInit {
     return {
       'segment': true,
       'active': segment,
-      [`segment--${segment}`]: true
+      [`segment--${segment+1}`]: true
     };
   }
 }

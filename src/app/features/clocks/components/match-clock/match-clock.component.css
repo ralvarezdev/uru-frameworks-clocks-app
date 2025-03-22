@@ -1,5 +1,8 @@
 /* Seven segment clock */
 .match-clock-container {
+  --segment--width: 0.2rem;
+  --segment--height: 1rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,45 +20,45 @@
 /* Seven segment */
 .match-clock-container__time-unit__match {
   display: grid;
-  grid-template-rows: repeat(5, 10px);
-  grid-template-columns: repeat(3, 10px);
-  gap: 2px;
+  grid-template-rows: var(--segment--height) var(--segment--height) var(--segment--height) var(--segment--height) var(--segment--height);
+  grid-template-columns: var(--segment--width) var(--segment--height) var(--segment--width);
+  gap: var(--segment--width);
 }
 
 /* Segments */
 .segment--1 {
-  grid-row: 1 / 2;
   grid-column: 2 / 3;
+  grid-row: 1 / 2;
 }
 
 .segment--2 {
-  grid-row: 2 / 3;
   grid-column: 3 / 4;
+  grid-row: 2 / 3;
 }
 
 .segment--3 {
-  grid-row: 3 / 4;
   grid-column: 3 / 4;
+  grid-row: 4 / 5;
 }
 
 .segment--4 {
-  grid-row: 4 / 5;
   grid-column: 2 / 3;
+  grid-row: 5 / 6;
 }
 
 .segment--5 {
-  grid-row: 3 / 4;
   grid-column: 1 / 2;
+  grid-row: 4 / 5;
 }
 
 .segment--6 {
-  grid-row: 2 / 3;
   grid-column: 1 / 2;
+  grid-row: 2 / 3;
 }
 
 .segment--7 {
-  grid-row: 3 / 4;
   grid-column: 2 / 3;
+  grid-row: 3 / 4;
 }
 
 /* Vertical segments */
@@ -63,16 +66,16 @@
 .segment--3,
 .segment--5,
 .segment--6 {
-  width: 2px;
-  height: 10px;
+  width: 0.1rem;
+  height: 0.5rem;
 }
 
 /* Horizontal segments */
 .segment--1,
 .segment--4,
 .segment--7 {
-  width: 10px;
-  height: 2px;
+  width: 0.5rem;
+  height: 0.1rem;
 }
 
 .segment {

@@ -1,14 +1,14 @@
   <div class="roman-clock-container">
     <div class="roman-clock-container__time-unit">
-      <app-label>Hours</app-label>
+      <app-label [additionalClassName]="'roman-clock-container__time-unit__label'">Hours</app-label>
       <div class="roman-clock-container__time-unit__roman-numeral">{{ hours }}</div>
     </div>
     <div class="roman-clock-container__time-unit">
-      <app-label>Minutes</app-label>
+      <app-label [additionalClassName]="'roman-clock-container__time-unit__label'">Minutes</app-label>
       <div class="roman-clock-container__time-unit__roman-numeral">{{ minutes }}</div>
     </div>
     <div class="roman-clock-container__time-unit">
-      <app-label>Seconds</app-label>
+      <app-label [additionalClassName]="'roman-clock-container__time-unit__label'">Seconds</app-label>
       <div class="roman-clock-container__time-unit__roman-numeral">{{ seconds }}</div>
     </div>
   </div>

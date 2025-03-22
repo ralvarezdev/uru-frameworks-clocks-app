@@ -1,19 +1,19 @@
   <div class="mosaic-clock-container">
     <div class="mosaic-clock-container__time-unit">
       <app-label>Hours</app-label>
-      <div class="mosaic-clock-container__time-unit__mosaic">
+      <div class="mosaic-clock-container__time-unit__mosaic mosaic-clock-container__time-unit__mosaic--24-tiles">
         <div *ngFor="let tile of hoursMosaic; let i = index" [ngClass]="getClassObject(tile)" [ngStyle]="{backgroundColor: tile && getHourColor(i)}"></div>
       </div>
     </div>
     <div class="mosaic-clock-container__time-unit">
       <app-label>Minutes</app-label>
-      <div class="mosaic-clock-container__time-unit__mosaic">
+      <div class="mosaic-clock-container__time-unit__mosaic mosaic-clock-container__time-unit__mosaic--60-tiles">
         <div *ngFor="let tile of minutesMosaic; let i = index" [ngClass]="getClassObject(tile)" [ngStyle]="{backgroundColor: tile && getMinuteColor(i)}"></div>
       </div>
     </div>
     <div class="mosaic-clock-container__time-unit">
       <app-label>Seconds</app-label>
-      <div class="mosaic-clock-container__time-unit__mosaic">
+      <div class="mosaic-clock-container__time-unit__mosaic mosaic-clock-container__time-unit__mosaic--60-tiles">
         <div *ngFor="let tile of secondsMosaic; let i = index" [ngClass]="getClassObject(tile)" [ngStyle]="{backgroundColor: tile && getSecondColor(i)}"></div>
       </div>
     </div>

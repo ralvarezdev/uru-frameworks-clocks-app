@@ -16,16 +16,23 @@
 /* Mosaic */
 .mosaic-clock-container__time-unit__mosaic {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: var(--gap--small);
+}
+
+.mosaic-clock-container__time-unit__mosaic--24-tiles {
+  grid-template-columns: repeat(3, 1.25rem);
+  grid-template-rows: repeat(8, 1.25rem);
+}
+
+.mosaic-clock-container__time-unit__mosaic--60-tiles {
+  grid-template-rows: repeat(10, 1rem);
+  grid-template-columns: repeat(6, 1rem);
 }
 
 /* Mosaic tile */
 .mosaic-clock-container__time-unit__mosaic__tile {
-  width: 1rem;
-  height: 1rem;
+  width: 100%;
+  height: 100%;
   background-color: var(--grey--medium);
-  border-radius: var(--border-radius--small);
   opacity: 0.5;
 }
 

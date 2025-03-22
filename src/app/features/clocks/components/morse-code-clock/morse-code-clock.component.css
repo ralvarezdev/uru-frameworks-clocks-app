@@ -5,7 +5,7 @@
   width: 100%;
   max-width: 600px;
   margin: auto;
-  gap: var(--gap--medium)
+  gap: var(--gap--large)
 }
 
 /* Time unit */
@@ -18,7 +18,8 @@
 
 /* Morse code */
 .morse-code-clock-container__time-unit__morse-code {
-  font-size: var(--font-size--extra-large);
+  font-size: var(--font-size--medium);
   font-weight: var(--font-weight--bold);
   color: var(--grey--darkest);
+  font-family: 'Courier New', Courier, monospace;
 }
