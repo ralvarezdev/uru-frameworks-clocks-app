@@ -1,20 +1,21 @@
-import {Component, computed, Input, signal} from '@angular/core';
+import {Component, computed, Input, OnInit, signal} from '@angular/core';
 import {NgStyle} from '@angular/common';
 import {ButtonComponent} from '../button/button.component';
+import {LabelComponent} from '../label/label.component';
 
 @Component({
   selector: 'app-input',
   imports: [
     NgStyle,
-    ButtonComponent
+    ButtonComponent,
+    LabelComponent
   ],
   templateUrl: './input.component.html',
   styleUrl: './input.component.css'
 })
 export class InputComponent {
   // Visibility
-  #passwordVisibility = signal<boolean>(true)
-  passwordVisibility = computed(this.#passwordVisibility)
+  passwordVisibility = signal<boolean>(true)
 
   @Input() id: string = '';
   @Input() label: string = '';
@@ -27,7 +28,8 @@ export class InputComponent {
   @Input() showError: boolean = false;
 
   // Toggle password visibility
-  togglePasswordVisibility() {
-    this.#passwordVisibility.update(prevPasswordVisibility => !prevPasswordVisibility)
+  togglePasswordVisibility(event: Event) {
+    console.log(2)
+    this.passwordVisibility.update(prevPasswordVisibility => !prevPasswordVisibility)
   }
 }

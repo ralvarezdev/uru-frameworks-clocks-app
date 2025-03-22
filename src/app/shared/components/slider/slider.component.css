@@ -1,0 +1,9 @@
+/* Slider container */
+.slider-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Slider input */
+.slider-container__input {
+}

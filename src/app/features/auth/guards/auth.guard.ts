@@ -8,13 +8,13 @@ import {AuthService} from '../services/auth.service';
 export class AuthGuard implements CanActivate {
   constructor(private router: Router, private authService: AuthService) {}
 
-  canActivate(): boolean {
+  async canActivate(): Promise<boolean> {
     if (this.authService.isAuthenticated) {
       console.log('User is authenticated');
       return true; // Allow navigation
     } else {
       console.log('User is not authenticated');
-      this.router.navigateByUrl('/login', {skipLocationChange: false});
+      await this.router.navigate(['/sign-in'], {skipLocationChange: false, replaceUrl: true});
       return false; // Block navigation
     }
   }

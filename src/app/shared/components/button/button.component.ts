@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {NgClass} from '@angular/common';
 
 @Component({
@@ -12,8 +12,8 @@ import {NgClass} from '@angular/common';
 export class ButtonComponent {
   @Input() type: string = 'button';
   @Input() disabled: boolean = false;
-  @Input() onClick: Function = () => {};
   @Input() additionalClassName: string = '';
+  @Output() clickHandler: EventEmitter<Event> = new EventEmitter<Event>();
 
   // Get class object
   getClassObject() {
@@ -21,5 +21,10 @@ export class ButtonComponent {
       'button': true,
       [this.additionalClassName]: !!this.additionalClassName
     };
+  }
+
+  // Emit click event
+  onClick(event: Event) {
+    this.clickHandler.emit(event);
   }
 }

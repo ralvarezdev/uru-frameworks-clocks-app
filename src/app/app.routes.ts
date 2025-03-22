@@ -17,8 +17,9 @@ import {AuthGuard} from './features/auth/guards/auth.guard';
 import {NotAuthGuard} from './features/auth/guards/not-auth.guard';
 
 export const routes: Routes = [
-  {path: 'login', component: SignInComponent, canActivate:[NotAuthGuard]},
-  {path: 'signup', component: SignUpComponent, canActivate:[NotAuthGuard]},
+  {path: 'sign-in', component: SignInComponent, canActivate:[NotAuthGuard]},
+  {path: 'sign-up', component: SignUpComponent, canActivate:[NotAuthGuard]},
+  /*
   {path: 'clocks/abacus', component: AbacusClockComponent, canActivate:[AuthGuard]},
   {path: 'clocks/analog', component: AnalogClockComponent, canActivate:[AuthGuard]},
   {path: 'clocks/binary', component: BinaryClockComponent, canActivate:[AuthGuard]},
@@ -30,6 +31,18 @@ export const routes: Routes = [
   {path: 'clocks/rgb', component: RgbClockComponent, canActivate:[AuthGuard]},
   {path: 'clocks/roman', component: RomanClockComponent, canActivate:[AuthGuard]},
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  */
+  {path: 'clocks/abacus', component: AbacusClockComponent},
+  {path: 'clocks/analog', component: AnalogClockComponent},
+  {path: 'clocks/binary', component: BinaryClockComponent},
+  {path: 'clocks/digital', component: DigitalClockComponent},
+  {path: 'clocks/led', component: LedClockComponent},
+  {path: 'clocks/match', component: MatchClockComponent},
+  {path: 'clocks/morse-code', component: MorseCodeClockComponent},
+  {path: 'clocks/mosaic', component: MosaicClockComponent},
+  {path: 'clocks/rgb', component: RgbClockComponent},
+  {path: 'clocks/roman', component: RomanClockComponent},
+  {path: 'dashboard', component: DashboardComponent},
+  {path: '', redirectTo: 'sign-in', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent},
 ];

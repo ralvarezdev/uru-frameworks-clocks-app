@@ -1,8 +1,8 @@
 <div class="input-main-container">
-  <label class="input-main-container__label" [for]="id">{{label}}</label>
+  <app-label [additionalClassName]="'input-main-container__label'" [for]="id">{{label}}</app-label>
   <div class="input-main-container__input-container">
-    <input class="input-main-container__input-container__input" [id]="id" [required]="required" [placeholder]="placeholder" [type]="type" [value]="value" [disabled]="disabled">
-    <app-button [additionalClassName]="'input-main-container__input-container__input__icon button--transparent'" [onClick]="togglePasswordVisibility" [ngStyle]="{'opacity': type==='password'?1:0}">
+    <input class="input-main-container__input-container__input" [id]="id" [required]="required" [placeholder]="placeholder" [type]="type!=='password'?type:(passwordVisibility()?'text':'password')" [value]="value" [disabled]="disabled">
+    <app-button [additionalClassName]="'input-main-container__input-container__input__icon button--transparent'" (clickHandler)="togglePasswordVisibility($event)" [ngStyle]="{'opacity': type==='password'?1:0}">
       <span class="material-symbols-outlined">{{passwordVisibility() ? 'visibility': 'visibility_off'}}</span>
     </app-button>
   </div>
