@@ -6,6 +6,7 @@
 
 /* Global reset for the app */
 * {
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -53,7 +54,11 @@
   --box-shadow--large: 0 0 30px rgba(0, 0, 0, 0.1);
   --absolute--top: 3rem;
   --absolute--right: 5rem;
+  --slider--thumb--size: 1.6rem;
+  --slider--range--height: 0.5rem;
+  --slider--range--min-width: 14rem;
   --transition--color--duration: 0.3s;
+  --transition--opacity--duration: 0.2s;
 }
 
 /* Header styles */

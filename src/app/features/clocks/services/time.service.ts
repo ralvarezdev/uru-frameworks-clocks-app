@@ -8,9 +8,6 @@ export class TimeService {
   #seconds = signal<number>(this.#initTime.getSeconds())
   #minutes = signal<number>(this.#initTime.getMinutes())
   #hours = signal<number>(this.#initTime.getHours())
-  seconds = computed(this.#seconds)
-  minutes = computed(this.#minutes)
-  hours = computed(this.#hours)
 
   // Increase the seconds
   increaseBySeconds(seconds: number){
@@ -49,17 +46,32 @@ export class TimeService {
   }
 
   // Set the seconds
-  setSeconds(seconds: number) {
+  set seconds(seconds: number) {
     this.#seconds.update(()=>seconds)
   }
 
   // Set the minutes
-  setMinutes(minutes: number) {
+  set minutes(minutes: number) {
     this.#minutes.update(()=>minutes)
   }
 
   // Set the hours
-  setHours(hours: number) {
+  set hours(hours: number) {
     this.#hours.update(()=>hours)
+  }
+
+  // Get the seconds
+  get seconds(){
+    return this.#seconds()
+  }
+
+  // Get the minutes
+  get minutes(){
+    return this.#minutes()
+  }
+
+  // Get the hours
+  get hours(){
+    return this.#hours()
   }
 }

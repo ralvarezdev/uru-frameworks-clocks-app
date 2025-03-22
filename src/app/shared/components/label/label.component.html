@@ -1,1 +1,3 @@
-<label [ngClass]="getClassObject()" [for]="for">{{label}}</label>
+<label [ngClass]="getClassObject()" [for]="for">
+  <ng-content></ng-content>
+</label>

@@ -4,12 +4,12 @@
     <div class="main-container__form-container__header-container">
       <h1 class="main-container__form-container__header-container__title">{{title}}</h1>
     </div>
-    <form class="main-container__form-container__content-container">
+    <ng-form class="main-container__form-container__content-container">
       <ng-content></ng-content>
       <div class="main-container__form-container__content-container__footer-container">
         <app-button [type]="'reset'" [additionalClassName]="'button--primary'">Cancel</app-button>
         <app-button [type]="'submit'" [additionalClassName]="'button--primary--filled'">Submit</app-button>
       </div>
-    </form>
+    </ng-form>
   </div>
 </div>

@@ -17,7 +17,7 @@ export class LabelComponent {
   // Get class object
   getClassObject() {
     return {
-      'button': true,
+      'label': true,
       [this.additionalClassName]: !!this.additionalClassName
     };
   }

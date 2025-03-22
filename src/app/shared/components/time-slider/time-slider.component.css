@@ -1,0 +1,13 @@
+/* Time slider container */
+.time-slider-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 1rem;
+  align-items: center;
+}
+
+/* Slider container */
+.time-slider-container app-slider  {
+  grid-column: 1/-1;
+  grid-template-columns: subgrid;
+}

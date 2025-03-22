@@ -1,4 +1,5 @@
 <div class="slider-container">
   <app-label [for]="id">{{label}}</app-label>
-  <input class="slider-container__input" type="range" [id]="id" [min]="min" [max]="max" [step]="step" [value]="value()" (input)="onInput($event)">
+  <input class="slider-container__input" type="range" [id]="id" [min]="min" [max]="max" [step]="step" [formControl]="valueControl">
+  <p class="slider-container__value">{{valueControl.value}}</p>
 </div>

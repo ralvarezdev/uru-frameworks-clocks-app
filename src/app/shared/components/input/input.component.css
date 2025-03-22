@@ -31,7 +31,6 @@
 
 /* Input */
 .input-main-container__input-container__input {
-  font-family: "Open Sans", sans-serif;
   font-size: var(--font-size--small);
   padding: var(--padding--extra-small);
   background-color: transparent;

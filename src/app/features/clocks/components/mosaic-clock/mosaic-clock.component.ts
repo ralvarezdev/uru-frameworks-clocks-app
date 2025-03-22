@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import {ClockLayoutComponent} from "../layout/layout.component";
 
 @Component({
   selector: 'app-mosaic-clock',
-  imports: [],
+    imports: [
+        ClockLayoutComponent
+    ],
   templateUrl: './mosaic-clock.component.html',
   styleUrl: './mosaic-clock.component.css'
 })

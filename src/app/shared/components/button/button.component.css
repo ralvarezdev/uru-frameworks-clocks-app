@@ -1,6 +1,5 @@
 /* Button */
 .button {
-  font-family: 'Roboto', sans-serif;
   border-radius: var(--border-radius--small);
   text-align: center;
   text-decoration: none;
