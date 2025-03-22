@@ -1,0 +1,12 @@
+/* Digital clock container */
+.digital-clock-container {
+  display: grid;
+  place-items: center;
+}
+
+/* Time */
+.digital-clock-container__time {
+  font-size: var(--font-size--extra-large);
+  font-weight: var(--font-weight--bold);
+  color: var(--grey--darkest);
+}

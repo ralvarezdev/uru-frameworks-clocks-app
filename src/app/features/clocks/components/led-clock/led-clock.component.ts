@@ -1,13 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {ClockLayoutComponent} from "../layout/layout.component";
 import {TimeService} from '../../services/time.service';
-import {DecimalPipe} from '@angular/common';
+import {DecimalPipe, NgForOf} from '@angular/common';
+import {LabelComponent} from '../../../../shared/components/label/label.component';
 
 @Component({
   selector: 'app-led-clock',
   imports: [
     ClockLayoutComponent,
-    DecimalPipe
+    DecimalPipe,
+    LabelComponent,
+    NgForOf
   ],
   templateUrl: './led-clock.component.html',
   styleUrl: './led-clock.component.css'
@@ -30,5 +33,10 @@ export class LedClockComponent implements OnInit {
     this.hours = this.timeService.hours;
     this.minutes = this.timeService.minutes;
     this.seconds = this.timeService.seconds;
+  }
+
+  // Get the range of numbers
+  range(n: number): number[] {
+    return [...Array(n).keys()];
   }
 }
