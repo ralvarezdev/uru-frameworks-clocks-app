@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ClockLayoutComponent} from "../layout/layout.component";
-import {TimeService} from '../../services/time.service';
+import {TimeService} from '../../services/time/time.service';
 import {NgClass, NgForOf, NgStyle} from '@angular/common';
 import {LabelComponent} from '../../../../shared/components/label/label.component';
 
@@ -13,7 +12,6 @@ const secondsColors = Array.from({ length: 60 }, generateRandomColor);
 @Component({
   selector: 'app-mosaic-clock',
   imports: [
-    ClockLayoutComponent,
     NgForOf,
     LabelComponent,
     NgClass,
@@ -35,7 +33,10 @@ export class MosaicClockComponent implements OnInit {
   // On init, update the time and set an interval to update the time every second
   ngOnInit(): void {
     this.updateTime();
-    setInterval(() => this.updateTime(), 1000);
+    setInterval(() =>  {
+      console.log('Updating Morse COde Clock');
+      this.updateTime()
+    }, 1000);
   }
 
   // Update the time

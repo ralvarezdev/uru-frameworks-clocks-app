@@ -1,13 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {ClockLayoutComponent} from '../layout/layout.component';
-import {TimeService} from '../../services/time.service';
+import {TimeService} from '../../services/time/time.service';
 import {NgForOf} from '@angular/common';
 import {LabelComponent} from '../../../../shared/components/label/label.component';
 
 @Component({
   selector: 'app-abacus-clock',
   imports: [
-    ClockLayoutComponent,
     NgForOf,
     LabelComponent
   ],
@@ -24,7 +22,10 @@ export class AbacusClockComponent implements OnInit {
   // On init, update the time and set an interval to update the time every second
   ngOnInit(): void {
     this.updateTime();
-    setInterval(() => this.updateTime(), 1000);
+    setInterval(() => {
+      console.log('Updating Abacus Clock');
+      this.updateTime()
+    }, 1000);
   }
 
   // Update the time

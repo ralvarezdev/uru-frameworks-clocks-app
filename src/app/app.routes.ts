@@ -1,48 +1,48 @@
 import { Routes } from '@angular/router';
-import {SignInComponent} from './features/auth/components/sign-in/sign-in.component';
-import {SignUpComponent} from './features/auth/components/sign-up/sign-up.component';
-import {AbacusClockComponent} from './features/clocks/components/abacus-clock/abacus-clock.component';
-import {AnalogClockComponent} from './features/clocks/components/analog-clock/analog-clock.component';
-import {BinaryClockComponent} from './features/clocks/components/binary-clock/binary-clock.component';
-import {DigitalClockComponent} from './features/clocks/components/digital-clock/digital-clock.component';
-import {LedClockComponent} from './features/clocks/components/led-clock/led-clock.component';
-import {MatchClockComponent} from './features/clocks/components/match-clock/match-clock.component';
-import {MorseCodeClockComponent} from './features/clocks/components/morse-code-clock/morse-code-clock.component';
-import {MosaicClockComponent} from './features/clocks/components/mosaic-clock/mosaic-clock.component';
-import {RgbClockComponent} from './features/clocks/components/rgb-clock/rgb-clock.component';
-import {RomanClockComponent} from './features/clocks/components/roman-clock/roman-clock.component';
-import {DashboardComponent} from './features/dashboard/components/dashboard/dashboard.component';
-import {PageNotFoundComponent} from './shared/components/page-not-found/page-not-found.component';
+import {SignInPageComponent} from './features/auth/pages/sign-in-page/sign-in-page.component';
+import {SignUpPageComponent} from './features/auth/pages/sign-up-page/sign-up-page.component';
+import {AbacusPageComponent} from './features/clocks/pages/abacus-page/abacus-page.component';
+import {AnalogPageComponent} from './features/clocks/pages/analog-page/analog-page.component';
+import {BinaryPageComponent} from './features/clocks/pages/binary-page/binary-page.component';
+import {DigitalPageComponent} from './features/clocks/pages/digital-page/digital-page.component';
+import {LedPageComponent} from './features/clocks/pages/led-page/led-page.component';
+import {MatchPageComponent} from './features/clocks/pages/match-page/match-page.component';
+import {MorseCodePageComponent} from './features/clocks/pages/morse-code-page/morse-code-page.component';
+import {MosaicPageComponent} from './features/clocks/pages/mosaic-page/mosaic-page.component';
+import {RgbPageComponent} from './features/clocks/pages/rgb-page/rgb-page.component';
+import {RomanPageComponent} from './features/clocks/pages/roman-page/roman-page.component';
+import {DashboardPageComponent} from './features/dashboard/pages/dashboard/dashboard-page.component';
+import {NotFoundPageComponent} from './shared/pages/not-found-page/not-found-page.component';
 import {AuthGuard} from './features/auth/guards/auth.guard';
 import {NotAuthGuard} from './features/auth/guards/not-auth.guard';
 
 export const routes: Routes = [
-  {path: 'sign-in', component: SignInComponent, canActivate:[NotAuthGuard]},
-  {path: 'sign-up', component: SignUpComponent, canActivate:[NotAuthGuard]},
+  {path: 'sign-in', component: SignInPageComponent, canActivate:[NotAuthGuard]},
+  {path: 'sign-up', component: SignUpPageComponent, canActivate:[NotAuthGuard]},
   /*
-  {path: 'clocks/abacus', component: AbacusClockComponent, canActivate:[AuthGuard]},
-  {path: 'clocks/analog', component: AnalogClockComponent, canActivate:[AuthGuard]},
-  {path: 'clocks/binary', component: BinaryClockComponent, canActivate:[AuthGuard]},
-  {path: 'clocks/digital', component: DigitalClockComponent, canActivate:[AuthGuard]},
-  {path: 'clocks/led', component: LedClockComponent, canActivate:[AuthGuard]},
-  {path: 'clocks/match', component: MatchClockComponent, canActivate:[AuthGuard]},
-  {path: 'clocks/morse-code', component: MorseCodeClockComponent, canActivate:[AuthGuard]},
-  {path: 'clocks/mosaic', component: MosaicClockComponent, canActivate:[AuthGuard]},
-  {path: 'clocks/rgb', component: RgbClockComponent, canActivate:[AuthGuard]},
-  {path: 'clocks/roman', component: RomanClockComponent, canActivate:[AuthGuard]},
-  {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
+  {path: 'clocks/abacus', component: AbacusPageComponent, canActivate:[AuthGuard]},
+  {path: 'clocks/analog', component: AnalogClockPageComponent, canActivate:[AuthGuard]},
+  {path: 'clocks/binary', component: BinaryClockPageComponent, canActivate:[AuthGuard]},
+  {path: 'clocks/digital', component: DigitalPageComponent, canActivate:[AuthGuard]},
+  {path: 'clocks/led', component: LedPageComponent, canActivate:[AuthGuard]},
+  {path: 'clocks/match', component: MatchPageComponent, canActivate:[AuthGuard]},
+  {path: 'clocks/morse-code', component: MorseCodePageComponent, canActivate:[AuthGuard]},
+  {path: 'clocks/mosaic', component: MosaicPageComponent, canActivate:[AuthGuard]},
+  {path: 'clocks/rgb', component: RgbPageComponent, canActivate:[AuthGuard]},
+  {path: 'clocks/roman', component: RomanPageComponent, canActivate:[AuthGuard]},
+  {path: 'dashboard', component: DashboardPageComponent, canActivate:[AuthGuard]},
   */
-  {path: 'clocks/abacus', component: AbacusClockComponent},
-  {path: 'clocks/analog', component: AnalogClockComponent},
-  {path: 'clocks/binary', component: BinaryClockComponent},
-  {path: 'clocks/digital', component: DigitalClockComponent},
-  {path: 'clocks/led', component: LedClockComponent},
-  {path: 'clocks/match', component: MatchClockComponent},
-  {path: 'clocks/morse-code', component: MorseCodeClockComponent},
-  {path: 'clocks/mosaic', component: MosaicClockComponent},
-  {path: 'clocks/rgb', component: RgbClockComponent},
-  {path: 'clocks/roman', component: RomanClockComponent},
-  {path: 'dashboard', component: DashboardComponent},
+  {path: 'clocks/abacus', component: AbacusPageComponent},
+  {path: 'clocks/analog', component: AnalogPageComponent},
+  {path: 'clocks/binary', component: BinaryPageComponent},
+  {path: 'clocks/digital', component: DigitalPageComponent},
+  {path: 'clocks/led', component: LedPageComponent},
+  {path: 'clocks/match', component: MatchPageComponent},
+  {path: 'clocks/morse-code', component: MorseCodePageComponent},
+  {path: 'clocks/mosaic', component: MosaicPageComponent},
+  {path: 'clocks/rgb', component: RgbPageComponent},
+  {path: 'clocks/roman', component: RomanPageComponent},
+  {path: 'dashboard', component: DashboardPageComponent},
   {path: '', redirectTo: 'sign-in', pathMatch: 'full'},
-  {path: '**', component: PageNotFoundComponent},
+  {path: '**', component: NotFoundPageComponent},
 ];

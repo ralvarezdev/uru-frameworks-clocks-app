@@ -1,12 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {ClockLayoutComponent} from "../layout/layout.component";
-import {TimeService} from '../../services/time.service';
+import {TimeService} from '../../services/time/time.service';
 
 @Component({
   selector: 'app-digital-clock',
-    imports: [
-        ClockLayoutComponent
-    ],
+    imports: [],
   templateUrl: './digital-clock.component.html',
   styleUrl: './digital-clock.component.css'
 })
@@ -18,7 +15,10 @@ export class DigitalClockComponent implements OnInit {
   // On init, update the time and set an interval to update the time every second
   ngOnInit(): void {
     this.updateTime();
-    setInterval(() => this.updateTime(), 1000);
+    setInterval(() =>  {
+      console.log('Updating Digital Clock');
+      this.updateTime()
+    }, 1000);
   }
 
   // Update the time

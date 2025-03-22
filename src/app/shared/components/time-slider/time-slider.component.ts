@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {SliderComponent} from '../slider/slider.component';
 import {identity} from 'rxjs';
-import {TimeService} from '../../../features/clocks/services/time.service';
+import {TimeService} from '../../../features/clocks/services/time/time.service';
 
 @Component({
   selector: 'app-time-slider',

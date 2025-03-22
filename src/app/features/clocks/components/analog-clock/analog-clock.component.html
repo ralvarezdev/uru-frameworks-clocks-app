@@ -1,8 +1,6 @@
-<app-clock-layout [title]="'Analog Clock'">
   <svg viewBox="0 0 100 100" class="analog-clock-container">
     <circle cx="50" cy="50" r="48" class="analog-clock-container__clock-face"/>
     <line x1="50" y1="50" x2="50" y2="20" [attr.transform]="'rotate(' + hourHandAngle + ' 50 50)'" class="analog-clock-container__hour-hand"/>
     <line x1="50" y1="50" x2="50" y2="10" [attr.transform]="'rotate(' + minuteHandAngle + ' 50 50)'" class="analog-clock-container__minute-hand"/>
     <line x1="50" y1="50" x2="50" y2="5" [attr.transform]="'rotate(' + secondHandAngle + ' 50 50)'" class="analog-clock-container__second-hand"/>
   </svg>
-</app-clock-layout>

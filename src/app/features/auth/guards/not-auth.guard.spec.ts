@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import {CanActivateFn, Router} from '@angular/router';
 import { NotAuthGuard } from './not-auth.guard';
-import {AuthService} from '../services/auth.service';
+import {AuthService} from '../services/auth/auth.service';
 
 describe('NotAuthGuard', () => {
   let router: Router;
