@@ -1,5 +1,16 @@
 <app-clock-layout>
-  <p>Hours: {{ hours }}</p>
-  <p>Minutes: {{ minutes }}</p>
-  <p>Seconds: {{ seconds }}</p>
+  <div class="roman-clock-container">
+    <div class="roman-clock-container__time-unit">
+      <app-label>Hours</app-label>
+      <div class="roman-clock-container__time-unit__roman-numeral">{{ hours }}</div>
+    </div>
+    <div class="roman-clock-container__time-unit">
+      <app-label>Minutes</app-label>
+      <div class="roman-clock-container__time-unit__roman-numeral">{{ minutes }}</div>
+    </div>
+    <div class="roman-clock-container__time-unit">
+      <app-label>Seconds</app-label>
+      <div class="roman-clock-container__time-unit__roman-numeral">{{ seconds }}</div>
+    </div>
+  </div>
 </app-clock-layout>

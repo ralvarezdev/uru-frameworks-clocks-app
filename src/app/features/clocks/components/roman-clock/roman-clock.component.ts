@@ -1,33 +1,38 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ClockLayoutComponent} from "../layout/layout.component";
 import { TimeService } from '../../services/time.service';
+import {LabelComponent} from '../../../../shared/components/label/label.component';
 
 @Component({
   selector: 'app-roman-clock',
-    imports: [
-        ClockLayoutComponent
-    ],
+  imports: [
+    ClockLayoutComponent,
+    LabelComponent
+  ],
   templateUrl: './roman-clock.component.html',
   styleUrl: './roman-clock.component.css'
 })
 export class RomanClockComponent implements OnInit {
- hours: string;
-  minutes: string;
-  seconds: string;
+  hours: string = '';
+  minutes: string = '';
+  seconds: string = '';
 
   constructor(private timeService: TimeService) {}
 
+  // On init, update the time and set an interval to update the time every second
   ngOnInit(): void {
     this.updateTime();
     setInterval(() => this.updateTime(), 1000);
   }
 
+  // Update the time
   updateTime(): void {
     this.hours = this.toRoman(this.timeService.hours);
     this.minutes = this.toRoman(this.timeService.minutes);
     this.seconds = this.toRoman(this.timeService.seconds);
   }
 
+  // Convert a number to a Roman numeral
   toRoman(num: number): string {
     const romanNumerals: Array<[string,number]> =  [
       ['M', 1000], ['CM', 900], ['D', 500], ['CD', 400],

@@ -1,5 +1,5 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
-import {NgClass} from '@angular/common';
+import {Component, Input, Output, EventEmitter, Inject, PLATFORM_ID} from '@angular/core';
+import {isPlatformBrowser, NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-button',
@@ -10,6 +10,8 @@ import {NgClass} from '@angular/common';
   styleUrl: './button.component.css'
 })
 export class ButtonComponent {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object){}
+
   @Input() type: string = 'button';
   @Input() disabled: boolean = false;
   @Input() additionalClassName: string = '';
@@ -25,6 +27,9 @@ export class ButtonComponent {
 
   // Emit click event
   onClick(event: Event) {
-    this.clickHandler.emit(event);
+    if (isPlatformBrowser(this.platformId)) {
+      console.log(1)
+      this.clickHandler.emit(event);
+    }
   }
 }

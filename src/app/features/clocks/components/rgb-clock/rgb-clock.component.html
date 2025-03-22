@@ -1,7 +1,16 @@
 <app-clock-layout>
-    <div class="rgb-clock">
-    <div [style.background-color]="hourColor" class="time-unit">Hours: {{ hours }}</div>
-    <div [style.background-color]="minuteColor" class="time-unit">Minutes: {{ minutes }}</div>
-    <div [style.background-color]="secondColor" class="time-unit">Seconds: {{ seconds }}</div>
+  <div class="rgb-clock-container">
+    <div class="rgb-clock-container__time-unit">
+      <app-label [additionalClassName]="'rgb-clock-container__time-unit__label'">Hours</app-label>
+      <div [style.background-color]="hourColor" class=" rgb-clock-container__time-unit__rgb"></div>
+    </div>
+    <div class="rgb-clock-container__time-unit">
+      <app-label [additionalClassName]="'rgb-clock-container__time-unit__label'">Minutes</app-label>
+      <div [style.background-color]="minuteColor" class=" rgb-clock-container__time-unit__rgb">Minutes: {{ minutes }}</div>
+    </div>
+    <div class="rgb-clock-container__time-unit">
+      <app-label [additionalClassName]="'rgb-clock-container__time-unit__label'">Seconds</app-label>
+      <div [style.background-color]="secondColor" class=" rgb-clock-container__time-unit__rgb">Seconds: {{ seconds }}</div>
+    </div>
   </div>
 </app-clock-layout>
