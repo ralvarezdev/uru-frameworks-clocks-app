@@ -1,11 +1,13 @@
 import {Component, Input} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
 import {LOGO_HEIGHT, LOGO_WIDTH} from '../../../../../constants';
+import {ButtonComponent} from '../../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-auth-layout',
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    ButtonComponent,
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.css'

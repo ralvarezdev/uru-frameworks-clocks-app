@@ -1,30 +1,59 @@
 /* Button */
 .button {
+  font-family: 'Roboto', sans-serif;
   border-radius: var(--border-radius--small);
-  padding: var(--padding--small) var(--padding--medium);
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: var(--font-size--small);
   cursor: pointer;
   outline: none;
   border: none;
   transition: background-color var(--transition--color--duration),
     color var(--transition--color--duration);
+  display: grid;
+  place-items: center;
 }
 
-.button--primary:hover {
-  background-color: var(--grey--dark);
+/* Primary button */
+.button--primary--filled {
+  background-color: var(--grey--light);
+  color: var(--grey--darker);
+  font-size: var(--font-size--small);
+  font-weight: var(--font-weight--regular);
+  padding: var(--padding--extra-small) var(--padding--large);
+}
+
+.button--primary--filled:hover {
+  background-color: var(--grey--darkest);
   color: var(--grey--lighter);
 }
 
-.button--primary:active {
-  background-color: var(--grey--darker);
+.button--primary--filled:active {
+  background-color: var(--grey--dark);
 }
 
+/* Primary not filled button */
+.button--primary {
+  background-color: transparent;
+  color: var(--grey--darker);
+  font-size: var(--font-size--small);
+  font-weight: var(--font-weight--regular);
+  padding: var(--padding--extra-small) var(--padding--large);
+}
+
+.button--primary:hover {
+  background-color: var(--grey--light);
+  color: var(--grey--darker);
+}
+
+.button--primary:active {
+  background-color: var(--grey--dark);
+}
+
+/* Secondary button */
 .button--secondary {
   background-color: var(--grey--light);
   color: var(--grey--darker);
+  padding: var(--padding--extra-small) var(--padding--small);
 }
 
 .button--secondary:hover {
@@ -36,6 +65,7 @@
   background-color: var(--grey--dark);
 }
 
+/* Disabled button */
 .button--disabled {
   background-color: var(--grey--light);
   color: var(--grey--medium);
@@ -50,16 +80,18 @@
   background-color: var(--grey--light);
 }
 
+/* Transparent button */
 .button--transparent {
   background-color: transparent;
-  color: var(--grey--darker);
+  color: var(--grey--darkest);
+  padding: var(--margin--extra-small);
 }
 
 .button--transparent:hover {
-  color: var(--grey--dark);
+  color: var(--grey--darker);
 }
 
 .button--transparent:active {
-  color: var(--grey--darker);
+  color: var(--grey--dark);
 }
 

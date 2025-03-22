@@ -1,1 +1,3 @@
-<button [ngClass]="{'button': true, className: className}" (click)="onClick()" [type]="type" [disabled]="disabled">{{text}}</button>
+<button [ngClass]="getClassObject()" (click)="onClick()" [type]="type" [disabled]="disabled">
+  <ng-content></ng-content>
+</button>

@@ -35,9 +35,16 @@
   --font-weight--regular: 400;
   --font-weight--medium: 500;
   --font-weight--bold: 700;
-  --padding--small: 0.5rem;
-  --padding--medium: 1rem;
-  --padding--large: 2rem;
+  --padding--extra-small: 0.5rem;
+  --padding--small: 1rem;
+  --padding--medium: 2rem;
+  --padding--large: 4rem;
+  --padding--extra-large: 8rem;
+  --margin--extra-small: 0.5rem;
+  --margin--small: 1rem;
+  --margin--medium: 2rem;
+  --margin--large: 4rem;
+  --margin--extra-large: 8rem;
   --border-radius--small: 0.5rem;
   --border-radius--medium: 1rem;
   --border-radius--large: 2rem;
@@ -72,4 +79,10 @@ h4, h5 {
 h6 {
   font-size: var(--font-size--small);
   font-weight: var(--font-weight--light);
+}
+
+/* Span */
+.material-symbols-outlined {
+  text-align: center;
+  vertical-align: middle;
 }

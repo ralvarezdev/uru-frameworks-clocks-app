@@ -2,9 +2,9 @@
   <label class="input-main-container__label" [for]="id">{{label}}</label>
   <div class="input-main-container__input-container">
     <input class="input-main-container__input-container__input" [id]="id" [required]="required" [placeholder]="placeholder" [type]="type" [value]="value" [disabled]="disabled">
-    <button class="input-main-container__input-container__input__icon" (click)="togglePasswordVisibility()" [className]="'button--transparent'">
-      <span class="material-symbols-outlined" [ngStyle]="{'opacity': type==='password'?1:0}">{{passwordVisibility() ? 'visibility': 'visibility_off'}}</span>
-    </button>
+    <app-button [additionalClassName]="'input-main-container__input-container__input__icon button--transparent'" [onClick]="togglePasswordVisibility" [ngStyle]="{'opacity': type==='password'?1:0}">
+      <span class="material-symbols-outlined">{{passwordVisibility() ? 'visibility': 'visibility_off'}}</span>
+    </app-button>
   </div>
-  <p class="input-main-container__error" [ngStyle]="{opacity: error ? 1 : 0}">{{error}}</p>
+  <p class="input-main-container__error" [ngStyle]="{opacity: showError ? 1 : 0}">{{error}}</p>
 </div>

@@ -10,9 +10,16 @@ import {NgClass} from '@angular/common';
   styleUrl: './button.component.css'
 })
 export class ButtonComponent {
-  @Input() text: string = '';
   @Input() type: string = 'button';
   @Input() disabled: boolean = false;
   @Input() onClick: Function = () => {};
-  @Input() className: string = '';
+  @Input() additionalClassName: string = '';
+
+  // Get class object
+  getClassObject() {
+    return {
+      'button': true,
+      [this.additionalClassName]: !!this.additionalClassName
+    };
+  }
 }
