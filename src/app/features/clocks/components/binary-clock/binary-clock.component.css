@@ -5,7 +5,7 @@
   width: 100%;
   max-width: 600px;
   margin: auto;
-  font-family: 'Courier New', Courier, monospace;
+  gap: var(--gap--medium);
 }
 
 /* Time unit */
@@ -18,6 +18,7 @@
 
 /* Roman numeral */
 .binary-clock-container__time-unit__binary {
+  font-family: 'Courier New', Courier, monospace;
   font-size: var(--font-size--medium);
   font-weight: var(--font-weight--bold);
   color: var(--grey--darkest);

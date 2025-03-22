@@ -5,7 +5,7 @@
   grid-template-rows: 1fr;
   place-items: center;
   height: 100vh;
-  background-image: url('/src/assets/images/clock--var2--1920x1278.webp');
+  background-image: url('/assets/images/clock--var2--1920x1278.webp');
   background-size: cover;
 }
 

@@ -2,6 +2,7 @@
 .led-clock-container {
   display: flex;
   justify-content: space-around;
+  gap: var(--gap--medium);
 }
 
 /* Time unit */

@@ -11,7 +11,7 @@ import {MorseCodePageComponent} from './features/clocks/pages/morse-code-page/mo
 import {MosaicPageComponent} from './features/clocks/pages/mosaic-page/mosaic-page.component';
 import {RgbPageComponent} from './features/clocks/pages/rgb-page/rgb-page.component';
 import {RomanPageComponent} from './features/clocks/pages/roman-page/roman-page.component';
-import {DashboardPageComponent} from './features/dashboard/pages/dashboard/dashboard-page.component';
+import {DashboardPageComponent} from './features/dashboard/pages/dashboard-page/dashboard-page.component';
 import {NotFoundPageComponent} from './shared/pages/not-found-page/not-found-page.component';
 import {AuthGuard} from './features/auth/guards/auth.guard';
 import {NotAuthGuard} from './features/auth/guards/not-auth.guard';

@@ -20,10 +20,12 @@ export class RomanClockComponent implements OnInit {
   // On init, update the time and set an interval to update the time every second
   ngOnInit(): void {
     this.updateTime();
+    /*
     setInterval(() =>  {
       console.log('Updating Roman Clock');
       this.updateTime()
     }, 1000);
+    */
   }
 
   // Update the time

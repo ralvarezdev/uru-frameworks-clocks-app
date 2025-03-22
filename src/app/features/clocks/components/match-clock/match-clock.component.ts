@@ -21,10 +21,12 @@ export class MatchClockComponent implements OnInit {
   // On init, update the time and set an interval to update the time every second
   ngOnInit(): void {
     this.updateTime();
+    /*
     setInterval(() =>  {
       console.log('Updating Match Clock');
       this.updateTime()
     }, 1000);
+    */
   }
 
   // Update the time and format the time units

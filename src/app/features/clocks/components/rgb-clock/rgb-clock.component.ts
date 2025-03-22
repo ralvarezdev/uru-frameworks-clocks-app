@@ -23,10 +23,12 @@ export class RgbClockComponent   implements OnInit {
   // On init, update the time and set an interval to update the time every second
   ngOnInit(): void {
     this.updateTime();
+    /*
     setInterval(() =>  {
       console.log('Updating RGB Clock');
       this.updateTime()
     }, 1000);
+    */
   }
 
   // Update the time and calculate the color for each part of the clock
@@ -41,7 +43,7 @@ export class RgbClockComponent   implements OnInit {
 
   // Convert a value to an RGB color
   toRgb(value: number, max: number): string {
-    const colorValue = Math.floor((value / max) * 255);
+    const colorValue = Math.floor(255-((value / max) * 255));
     return `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
   }
 }

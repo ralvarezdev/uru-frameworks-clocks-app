@@ -6,4 +6,15 @@
   justify-content: center;
   height: 100vh;
   gap: var(--gap--large);
+  color: var(--grey--darkest);
+}
+
+/* Title */
+.main-container__title {
+  background-color: var(--color--dark-primary);
+  color: var(--grey--lighter);
+  padding: var(--padding--small) var(--padding--medium);
+  border-radius: var(--border-radius--medium);
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
 }
