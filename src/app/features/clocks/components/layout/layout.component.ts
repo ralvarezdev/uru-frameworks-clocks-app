@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {TimeSliderComponent} from "../../../../shared/components/time-slider/time-slider.component";
 
 @Component({
@@ -10,5 +10,5 @@ import {TimeSliderComponent} from "../../../../shared/components/time-slider/tim
   styleUrl: './layout.component.css'
 })
 export class ClockLayoutComponent {
-
+  @Input() title: string = '';
 }

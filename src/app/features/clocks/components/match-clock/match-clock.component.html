@@ -1,18 +1,18 @@
-<app-clock-layout>
-  <div class="seven-segment-clock-container">
-    <div class="seven-segment-clock-container__time-unit" *ngFor="let digit of hours.split('')">
-      <div class="seven-segment-clock-container__time-unit__seven-segment">
-        <div class="segment" *ngFor="let segment of getSegments(digit)" [class.active]="segment"></div>
+<app-clock-layout [title]="'Match Clock'">
+  <div class="match-clock-container">
+    <div class="match-clock-container__time-unit" *ngFor="let digit of hours.split('')">
+      <div class="match-clock-container__time-unit__match">
+        <div *ngFor="let segment of getSegments(digit)" [ngClass]="getClassObject(segment)"></div>
       </div>
     </div>
-    <div class="seven-segment-clock-container__time-unit" *ngFor="let digit of minutes.split('')">
-      <div class="seven-segment-clock-container__time-unit__seven-segment">
-        <div class="segment" *ngFor="let segment of getSegments(digit)" [class.active]="segment"></div>
+    <div class="match-clock-container__time-unit" *ngFor="let digit of minutes.split('')">
+      <div class="match-clock-container__time-unit__match">
+        <div *ngFor="let segment of getSegments(digit)" [ngClass]="getClassObject(segment)"></div>
       </div>
     </div>
-    <div class="seven-segment-clock-container__time-unit" *ngFor="let digit of seconds.split('')">
-      <div class="seven-segment-clock-container__time-unit__seven-segment">
-        <div *ngFor="let segment of getSegments(digit)" [ngClass]="getClassObject()"></div>
+    <div class="match-clock-container__time-unit" *ngFor="let digit of seconds.split('')">
+      <div class="match-clock-container__time-unit__match">
+        <div *ngFor="let segment of getSegments(digit); let i = index" [ngClass]="getClassObject(segment)"></div>
       </div>
     </div>
   </div>

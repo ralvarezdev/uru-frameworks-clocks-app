@@ -1,5 +1,5 @@
 /* Seven segment clock */
-.seven-segment-clock-container {
+.match-clock-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,7 +8,7 @@
 }
 
 /* Time unit */
-.seven-segment-clock-container__time-unit {
+.match-clock-container__time-unit {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,7 @@
 }
 
 /* Seven segment */
-.seven-segment-clock-container__time-unit__seven-segment {
+.match-clock-container__time-unit__match {
   display: grid;
   grid-template-rows: repeat(5, 10px);
   grid-template-columns: repeat(3, 10px);

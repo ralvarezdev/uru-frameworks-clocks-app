@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ClockLayoutComponent} from "../layout/layout.component";
+import { TimeService } from '../../services/time.service';
 
 @Component({
   selector: 'app-analog-clock',
@@ -10,17 +11,19 @@ import {ClockLayoutComponent} from "../layout/layout.component";
   styleUrl: './analog-clock.component.css'
 })
 export class AnalogClockComponent implements OnInit {
-  hourHandAngle: number;
-  minuteHandAngle: number;
-  secondHandAngle: number;
+  hourHandAngle: number = 0;
+  minuteHandAngle: number = 0;
+  secondHandAngle: number = 0;
 
   constructor(private timeService: TimeService) {}
 
+  // On init, update the time and set an interval to update the time every second
   ngOnInit(): void {
     this.updateTime();
     setInterval(() => this.updateTime(), 1000);
   }
 
+  // Update the time and calculate the angle for each hand
   updateTime(): void {
     const hours = this.timeService.hours % 12;
     const minutes = this.timeService.minutes;

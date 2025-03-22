@@ -1,20 +1,23 @@
-.clock {
+/* Analog clock container */
+.analog-clock-container {
   width: 200px;
   height: 200px;
 }
 
-.clock-face {
+/* Clock face */
+.analog-clock-container__clock-face {
   fill: white;
   stroke: black;
   stroke-width: 2px;
 }
 
-.hour-hand, .minute-hand, .second-hand {
+/* Clock hands */
+.analog-clock-container__hour-hand, .analog-clock-container__minute-hand, .analog-clock-container__second-hand {
   stroke: black;
   stroke-width: 2px;
   stroke-linecap: round;
 }
 
-.second-hand {
+.analog-clock-container__second-hand {
   stroke: red;
 }
