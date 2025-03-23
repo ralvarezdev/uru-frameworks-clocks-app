@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import {Routes} from '@angular/router';
 import {SignInPageComponent} from './features/auth/pages/sign-in-page/sign-in-page.component';
 import {SignUpPageComponent} from './features/auth/pages/sign-up-page/sign-up-page.component';
 import {AbacusPageComponent} from './features/clocks/pages/abacus-page/abacus-page.component';
@@ -13,12 +13,11 @@ import {RgbPageComponent} from './features/clocks/pages/rgb-page/rgb-page.compon
 import {RomanPageComponent} from './features/clocks/pages/roman-page/roman-page.component';
 import {DashboardPageComponent} from './features/dashboard/pages/dashboard-page/dashboard-page.component';
 import {NotFoundPageComponent} from './shared/pages/not-found-page/not-found-page.component';
-import {AuthGuard} from './features/auth/guards/auth.guard';
 import {NotAuthGuard} from './features/auth/guards/not-auth.guard';
 
 export const routes: Routes = [
-  {path: 'sign-in', component: SignInPageComponent, canActivate:[NotAuthGuard]},
-  {path: 'sign-up', component: SignUpPageComponent, canActivate:[NotAuthGuard]},
+  {path: 'sign-in', component: SignInPageComponent, canActivate: [NotAuthGuard]},
+  {path: 'sign-up', component: SignUpPageComponent, canActivate: [NotAuthGuard]},
   /*
   {path: 'clocks/abacus', component: AbacusPageComponent, canActivate:[AuthGuard]},
   {path: 'clocks/analog', component: AnalogPageComponent, canActivate:[AuthGuard]},

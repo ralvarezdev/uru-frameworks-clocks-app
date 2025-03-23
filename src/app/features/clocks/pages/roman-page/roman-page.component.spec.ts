@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RomanPageComponent } from './roman-page.component';
+import {RomanPageComponent} from './roman-page.component';
 
 describe('RomanPageComponent', () => {
   let component: RomanPageComponent;
@@ -10,7 +10,7 @@ describe('RomanPageComponent', () => {
     await TestBed.configureTestingModule({
       imports: [RomanPageComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(RomanPageComponent);
     component = fixture.componentInstance;

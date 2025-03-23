@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter, Inject, PLATFORM_ID} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, Output, PLATFORM_ID} from '@angular/core';
 import {isPlatformBrowser} from '@angular/common';
 
 @Component({
@@ -13,7 +13,7 @@ export class ButtonComponent {
   @Input() disabled: boolean = false;
   @Output() clickHandler: EventEmitter<Event> = new EventEmitter<Event>();
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object){
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RomanClockComponent } from './roman-clock.component';
+import {RomanClockComponent} from './roman-clock.component';
 
 describe('RomanClockComponent', () => {
   let component: RomanClockComponent;
@@ -10,7 +10,7 @@ describe('RomanClockComponent', () => {
     await TestBed.configureTestingModule({
       imports: [RomanClockComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(RomanClockComponent);
     component = fixture.componentInstance;

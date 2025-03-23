@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import {TimeService} from '../../services/time/time.service';
 import {NgForOf} from '@angular/common';
 import {LabelComponent} from '../../../../shared/components/label/label.component';
@@ -8,10 +8,11 @@ import {BaseClockComponent} from '../base-clock/base-clock.component';
   selector: 'app-abacus-clock',
   imports: [
     NgForOf,
-    LabelComponent
+    LabelComponent,
   ],
   templateUrl: './abacus-clock.component.html',
-  styleUrl: './abacus-clock.component.css'
+  styleUrl: './abacus-clock.component.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class AbacusClockComponent extends BaseClockComponent {
   hours: number = 0;
@@ -31,6 +32,6 @@ export class AbacusClockComponent extends BaseClockComponent {
 
   // Get the beads for the abacus
   getBeads(value: number, max: number): number[] {
-    return Array.from({ length: max }, (_, i) => (i < value ? 1 : 0));
+    return Array.from({length: max}, (_, i) => (i < value ? 1 : 0));
   }
 }

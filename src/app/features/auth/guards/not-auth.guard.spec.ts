@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 import {CanActivateFn, Router} from '@angular/router';
-import { NotAuthGuard } from './not-auth.guard';
+import {NotAuthGuard} from './not-auth.guard';
 import {AuthService} from '../services/auth/auth.service';
 
 describe('NotAuthGuard', () => {
@@ -12,11 +12,11 @@ describe('NotAuthGuard', () => {
     return TestBed.runInInjectionContext(() => guard.canActivate());
   };
 
- beforeEach(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        { provide: Router, useValue: jasmine.createSpyObj('Router', ['navigateByUrl']) },
-        { provide: AuthService, useValue: jasmine.createSpyObj('AuthService', ['isAuthenticated']) }
+        {provide: Router, useValue: jasmine.createSpyObj('Router', ['navigateByUrl'])},
+        {provide: AuthService, useValue: jasmine.createSpyObj('AuthService', ['isAuthenticated'])}
       ]
     });
     router = TestBed.inject(Router);

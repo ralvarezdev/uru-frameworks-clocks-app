@@ -1,12 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Inject,
-  Input,
-  OnInit,
-  Output,
-  PLATFORM_ID,
-} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnInit, Output, PLATFORM_ID,} from '@angular/core';
 import {LabelComponent} from '../label/label.component';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {isPlatformBrowser, NgIf} from '@angular/common';
@@ -31,10 +23,10 @@ export class SliderComponent implements OnInit {
   @Input() max: number = 100;
   @Input() step: number = 1;
   @Input() disabled: boolean = false;
-  @Output() valueChange: EventEmitter<number|null> = new EventEmitter<number|null>();
+  @Output() valueChange: EventEmitter<number | null> = new EventEmitter<number | null>();
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {
-      this.isBrowser = isPlatformBrowser(this.platformId);
+    this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
   // On init

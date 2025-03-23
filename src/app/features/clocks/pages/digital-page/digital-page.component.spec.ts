@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DigitalPageComponent } from './digital-page.component';
+import {DigitalPageComponent} from './digital-page.component';
 
 describe('DigitalPageComponent', () => {
   let component: DigitalPageComponent;
@@ -10,7 +10,7 @@ describe('DigitalPageComponent', () => {
     await TestBed.configureTestingModule({
       imports: [DigitalPageComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(DigitalPageComponent);
     component = fixture.componentInstance;

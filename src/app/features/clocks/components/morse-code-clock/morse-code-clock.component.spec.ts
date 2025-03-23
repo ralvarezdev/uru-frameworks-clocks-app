@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MorseCodeClockComponent } from './morse-code-clock.component';
+import {MorseCodeClockComponent} from './morse-code-clock.component';
 
 describe('MorseCodeClockComponent', () => {
   let component: MorseCodeClockComponent;
@@ -10,7 +10,7 @@ describe('MorseCodeClockComponent', () => {
     await TestBed.configureTestingModule({
       imports: [MorseCodeClockComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(MorseCodeClockComponent);
     component = fixture.componentInstance;

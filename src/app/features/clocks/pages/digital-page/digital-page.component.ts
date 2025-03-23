@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {DigitalClockComponent} from '../../components/digital-clock/digital-clock.component';
 import {ClockLayoutComponent} from '../../layouts/clock-layout/clock-layout.component';
 

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ClockLayoutComponent } from './clock-layout.component';
+import {ClockLayoutComponent} from './clock-layout.component';
 
 describe('ClockLayoutComponent', () => {
   let component: ClockLayoutComponent;
@@ -10,7 +10,7 @@ describe('ClockLayoutComponent', () => {
     await TestBed.configureTestingModule({
       imports: [ClockLayoutComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ClockLayoutComponent);
     component = fixture.componentInstance;

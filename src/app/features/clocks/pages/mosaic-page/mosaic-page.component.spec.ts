@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MosaicPageComponent } from './mosaic-page.component';
+import {MosaicPageComponent} from './mosaic-page.component';
 
 describe('MosaicPageComponent', () => {
   let component: MosaicPageComponent;
@@ -10,7 +10,7 @@ describe('MosaicPageComponent', () => {
     await TestBed.configureTestingModule({
       imports: [MosaicPageComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(MosaicPageComponent);
     component = fixture.componentInstance;

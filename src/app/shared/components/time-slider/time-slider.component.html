@@ -1,5 +1,8 @@
 <div class="time-slider-container">
-  <app-slider [label]="'Hour'" [id]="id + '--hour'" [min]="0" [max]="23" [step]="1" [initialValue]="hourSliderValue" (valueChange)="onHourChange($event)"></app-slider>
-  <app-slider [label]="'Minute'" [id]="id + '--minute'" [min]="0" [max]="59" [step]="1" [initialValue]="minuteSliderValue" (valueChange)="onMinuteChange($event)"></app-slider>
-  <app-slider [label]="'Second'" [id]="id + '--second'" [min]="0" [max]="59" [step]="1" [initialValue]="secondSliderValue" (valueChange)="onSecondChange($event)"></app-slider>
+  <app-slider (valueChange)="onHourChange($event)" [id]="id + '--hour'" [initialValue]="hourSliderValue" [label]="'Hour'" [max]="23" [min]="0"
+              [step]="1"></app-slider>
+  <app-slider (valueChange)="onMinuteChange($event)" [id]="id + '--minute'" [initialValue]="minuteSliderValue" [label]="'Minute'" [max]="59"
+              [min]="0" [step]="1"></app-slider>
+  <app-slider (valueChange)="onSecondChange($event)" [id]="id + '--second'" [initialValue]="secondSliderValue" [label]="'Second'" [max]="59"
+              [min]="0" [step]="1"></app-slider>
 </div>

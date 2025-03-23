@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DigitalClockComponent } from './digital-clock.component';
+import {DigitalClockComponent} from './digital-clock.component';
 
 describe('DigitalClockComponent', () => {
   let component: DigitalClockComponent;
@@ -10,7 +10,7 @@ describe('DigitalClockComponent', () => {
     await TestBed.configureTestingModule({
       imports: [DigitalClockComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(DigitalClockComponent);
     component = fixture.componentInstance;

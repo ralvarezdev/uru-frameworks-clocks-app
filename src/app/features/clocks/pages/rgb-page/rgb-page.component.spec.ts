@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RgbPageComponent } from './rgb-page.component';
+import {RgbPageComponent} from './rgb-page.component';
 
 describe('RgbPageComponent', () => {
   let component: RgbPageComponent;
@@ -10,7 +10,7 @@ describe('RgbPageComponent', () => {
     await TestBed.configureTestingModule({
       imports: [RgbPageComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(RgbPageComponent);
     component = fixture.componentInstance;

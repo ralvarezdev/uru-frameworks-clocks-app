@@ -1,20 +1,20 @@
-  <div class="abacus-clock-container">
-    <div class="abacus-clock-container__time-unit">
-      <app-label >Hours</app-label>
-      <div class="abacus-clock-container__time-unit__beads">
-        <div *ngFor="let bead of getBeads(hours, 24)" class="bead" [class.active]="bead"></div>
-      </div>
-    </div>
-    <div class="abacus-clock-container__time-unit">
-      <app-label>Minutes</app-label>
-      <div class="abacus-clock-container__time-unit__beads">
-        <div *ngFor="let bead of getBeads(minutes, 60)" class="bead" [class.active]="bead"></div>
-      </div>
-    </div>
-    <div class="abacus-clock-container__time-unit">
-      <app-label>Seconds</app-label>
-      <div class="abacus-clock-container__time-unit__beads">
-        <div *ngFor="let bead of getBeads(seconds, 60)" class="bead" [class.active]="bead"></div>
-      </div>
+<div class="abacus-clock-container">
+  <div class="abacus-clock-container__time-unit">
+    <app-label>Hours</app-label>
+    <div class="abacus-clock-container__time-unit__beads">
+      <div *ngFor="let bead of getBeads(hours, 24)" [class.active]="bead" class="bead"></div>
     </div>
   </div>
+  <div class="abacus-clock-container__time-unit">
+    <app-label>Minutes</app-label>
+    <div class="abacus-clock-container__time-unit__beads">
+      <div *ngFor="let bead of getBeads(minutes, 60)" [class.active]="bead" class="bead"></div>
+    </div>
+  </div>
+  <div class="abacus-clock-container__time-unit">
+    <app-label>Seconds</app-label>
+    <div class="abacus-clock-container__time-unit__beads">
+      <div *ngFor="let bead of getBeads(seconds, 60)" [class.active]="bead" class="bead"></div>
+    </div>
+  </div>
+</div>

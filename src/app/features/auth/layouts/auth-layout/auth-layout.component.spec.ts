@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AuthLayoutComponent } from './auth-layout.component';
+import {AuthLayoutComponent} from './auth-layout.component';
 
 describe('LayoutComponent', () => {
   let component: AuthLayoutComponent;
@@ -10,7 +10,7 @@ describe('LayoutComponent', () => {
     await TestBed.configureTestingModule({
       imports: [AuthLayoutComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(AuthLayoutComponent);
     component = fixture.componentInstance;

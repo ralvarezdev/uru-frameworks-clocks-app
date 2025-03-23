@@ -4,7 +4,7 @@ import {BaseClockComponent} from '../base-clock/base-clock.component';
 
 @Component({
   selector: 'app-digital-clock',
-    imports: [],
+  imports: [],
   templateUrl: './digital-clock.component.html',
   styleUrl: './digital-clock.component.css'
 })

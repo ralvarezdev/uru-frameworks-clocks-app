@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {ApiService} from '../../../../shared/services/api.service';
 import {CookieService} from 'ngx-cookie-service';
 import config from '../../../../../config';
@@ -7,7 +7,13 @@ import config from '../../../../../config';
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private apiService: ApiService, private cookieService: CookieService) {}
+  constructor(private apiService: ApiService, private cookieService: CookieService) {
+  }
+
+  // Check if the user is authenticated
+  get isAuthenticated(): boolean {
+    return this.cookieService.check(config.COOKIE_ACCESS_TOKEN_NAME)
+  }
 
   // Sign in with email/password
   signUp(email: string, password: string) {
@@ -27,10 +33,5 @@ export class AuthService {
   // Sign out
   signOut() {
     return this.apiService.fetch('/sign-out', {})
-  }
-
-  // Check if the user is authenticated
-  get isAuthenticated(): boolean {
-    return this.cookieService.check(config.COOKIE_ACCESS_TOKEN_NAME)
   }
 }

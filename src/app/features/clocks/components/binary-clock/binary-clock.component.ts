@@ -11,7 +11,7 @@ import {BaseClockComponent} from '../base-clock/base-clock.component';
   templateUrl: './binary-clock.component.html',
   styleUrl: './binary-clock.component.css'
 })
-export class BinaryClockComponent extends BaseClockComponent{
+export class BinaryClockComponent extends BaseClockComponent {
   hours: string = '';
   minutes: string = '';
   seconds: string = '';

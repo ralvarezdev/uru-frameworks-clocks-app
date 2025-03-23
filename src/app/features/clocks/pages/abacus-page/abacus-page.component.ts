@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {AbacusClockComponent} from '../../components/abacus-clock/abacus-clock.component';
 import {ClockLayoutComponent} from '../../layouts/clock-layout/clock-layout.component';
 

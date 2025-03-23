@@ -7,7 +7,7 @@
 }
 
 /* Slider container */
-.time-slider-container app-slider  {
+.time-slider-container app-slider {
   grid-column: 1/-1;
   grid-template-columns: subgrid;
 }

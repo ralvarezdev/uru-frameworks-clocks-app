@@ -1,14 +1,14 @@
-  <div class="led-clock-container">
-    <div class="led-clock-container__time-unit">
-      <app-label>Hours</app-label>
-      <div *ngFor="let hour of range(hours)" class="led"></div>
-    </div>
-    <div class="led-clock-container__time-unit">
-      <app-label>Minutes</app-label>
-      <div *ngFor="let minute of range(minutes)" class="led"></div>
-    </div>
-    <div class="led-clock-container__time-unit">
-      <app-label>Seconds</app-label>
-      <div *ngFor="let second of range(seconds)" class="led"></div>
-    </div>
+<div class="led-clock-container">
+  <div class="led-clock-container__time-unit">
+    <app-label>Hours</app-label>
+    <div *ngFor="let hour of range(hours)" class="led"></div>
   </div>
+  <div class="led-clock-container__time-unit">
+    <app-label>Minutes</app-label>
+    <div *ngFor="let minute of range(minutes)" class="led"></div>
+  </div>
+  <div class="led-clock-container__time-unit">
+    <app-label>Seconds</app-label>
+    <div *ngFor="let second of range(seconds)" class="led"></div>
+  </div>
+</div>

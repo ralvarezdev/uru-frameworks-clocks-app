@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RgbClockComponent } from './rgb-clock.component';
+import {RgbClockComponent} from './rgb-clock.component';
 
 describe('RgbClockComponent', () => {
   let component: RgbClockComponent;
@@ -10,7 +10,7 @@ describe('RgbClockComponent', () => {
     await TestBed.configureTestingModule({
       imports: [RgbClockComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(RgbClockComponent);
     component = fixture.componentInstance;

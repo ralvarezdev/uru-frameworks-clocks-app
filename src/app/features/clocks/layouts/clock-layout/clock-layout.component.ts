@@ -5,7 +5,7 @@ import {NgClass} from '@angular/common';
 import {Router} from '@angular/router';
 
 // Clocks ID by name
-const ClocksIDByName: Record<string, number>= {
+const ClocksIDByName: Record<string, number> = {
   'abacus': 1,
   'analog': 2,
   'binary': 3,
@@ -55,15 +55,15 @@ export class ClockLayoutComponent {
 
   // On Left Arrow Click
   onLeftArrowClick(event: Event): void {
-    this.clockID = this.clockID>1?this.clockID-1:10;
+    this.clockID = this.clockID > 1 ? this.clockID - 1 : 10;
     this.clockName = ClocksNameByID?.[this.clockID];
-    this.router.navigateByUrl('/clocks/'+this.clockName, {skipLocationChange: false, replaceUrl: true});
+    this.router.navigateByUrl('/clocks/' + this.clockName, {skipLocationChange: false, replaceUrl: true});
   }
 
   // On Right Arrow Click
   onRightArrowClick(event: Event): void {
-    this.clockID = this.clockID<10?this.clockID+1:1;
+    this.clockID = this.clockID < 10 ? this.clockID + 1 : 1;
     this.clockName = ClocksNameByID?.[this.clockID];
-    this.router.navigateByUrl('/clocks/'+this.clockName, {skipLocationChange: false, replaceUrl: true});
+    this.router.navigateByUrl('/clocks/' + this.clockName, {skipLocationChange: false, replaceUrl: true});
   }
 }

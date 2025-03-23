@@ -17,7 +17,7 @@ const morseCodeMap: { [key: number]: string } = {
   templateUrl: './morse-code-clock.component.html',
   styleUrl: './morse-code-clock.component.css'
 })
-export class MorseCodeClockComponent extends BaseClockComponent{
+export class MorseCodeClockComponent extends BaseClockComponent {
   hours: string = '';
   minutes: string = '';
   seconds: string = '';

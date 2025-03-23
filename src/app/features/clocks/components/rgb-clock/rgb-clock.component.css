@@ -10,11 +10,11 @@
 
 /* Time unit */
 .rgb-clock-container__time-unit {
-  text-align: center;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  gap: var(--gap--small);
 }
 
 /* Label */

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {AuthLayoutComponent} from '../../layouts/auth-layout/auth-layout.component';
 import {InputComponent} from '../../../../shared/components/input/input.component';
 

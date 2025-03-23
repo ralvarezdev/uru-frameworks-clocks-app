@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ClockLayoutComponent} from '../../layouts/clock-layout/clock-layout.component';
 import {MorseCodeClockComponent} from '../../components/morse-code-clock/morse-code-clock.component';
 

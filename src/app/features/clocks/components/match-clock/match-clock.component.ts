@@ -37,27 +37,27 @@ export class MatchClockComponent extends BaseClockComponent {
   getSegments(digit: string): number[] {
     // Get only the first digit
     digit = digit.split('')[0]
-      if (digit === '0')
-        return [1, 1, 1, 1, 1, 1, 0];
-      if (digit === '1')
-        return [0, 1, 1, 0, 0, 0, 0];
-      if (digit === '2')
-        return [1, 1, 0, 1, 1, 0, 1];
-      if (digit === '3')
-        return [1, 1, 1, 1, 0, 0, 1];
-      if (digit === '4')
-        return [0, 1, 1, 0, 0, 1, 1];
-      if (digit === '5')
-        return [1, 0, 1, 1, 0, 1, 1];
-      if (digit === '6')
-        return [1, 0, 1, 1, 1, 1, 1];
-      if (digit === '7')
-        return [1, 1, 1, 0, 0, 0, 0];
-      if (digit === '8')
-        return [1, 1, 1, 1, 1, 1, 1];
-      if (digit === '9')
-        return [1, 1, 1, 1, 0, 1, 1];
-      return [];
+    if (digit === '0')
+      return [1, 1, 1, 1, 1, 1, 0];
+    if (digit === '1')
+      return [0, 1, 1, 0, 0, 0, 0];
+    if (digit === '2')
+      return [1, 1, 0, 1, 1, 0, 1];
+    if (digit === '3')
+      return [1, 1, 1, 1, 0, 0, 1];
+    if (digit === '4')
+      return [0, 1, 1, 0, 0, 1, 1];
+    if (digit === '5')
+      return [1, 0, 1, 1, 0, 1, 1];
+    if (digit === '6')
+      return [1, 0, 1, 1, 1, 1, 1];
+    if (digit === '7')
+      return [1, 1, 1, 0, 0, 0, 0];
+    if (digit === '8')
+      return [1, 1, 1, 1, 1, 1, 1];
+    if (digit === '9')
+      return [1, 1, 1, 1, 0, 1, 1];
+    return [];
   }
 
   // Get the class object
@@ -65,7 +65,7 @@ export class MatchClockComponent extends BaseClockComponent {
     return {
       'segment': true,
       'active': segment,
-      [`segment--${segment+1}`]: true
+      [`segment--${segment + 1}`]: true
     };
   }
 }

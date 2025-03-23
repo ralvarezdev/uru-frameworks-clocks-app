@@ -10,7 +10,10 @@
 
 /* Time unit */
 .mosaic-clock-container__time-unit {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap--small);
 }
 
 /* Mosaic */

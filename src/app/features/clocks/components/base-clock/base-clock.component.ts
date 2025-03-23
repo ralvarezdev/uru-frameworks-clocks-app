@@ -1,11 +1,12 @@
-import {OnInit, OnDestroy, Directive} from '@angular/core';
-import { TimeService } from '../../services/time/time.service';
+import {Directive, OnDestroy, OnInit} from '@angular/core';
+import {TimeService} from '../../services/time/time.service';
 
 @Directive()
 export abstract class BaseClockComponent implements OnInit, OnDestroy {
-  #interval: NodeJS.Timeout|null = null;
+  #interval: NodeJS.Timeout | null = null;
 
-  protected constructor(protected timeService: TimeService) {}
+  protected constructor(protected timeService: TimeService) {
+  }
 
   ngOnInit(): void {
     this.timeService.start();

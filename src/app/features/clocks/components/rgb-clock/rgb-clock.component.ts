@@ -37,7 +37,7 @@ export class RgbClockComponent extends BaseClockComponent {
 
   // Convert a value to an RGB color
   toRgb(value: number, max: number): string {
-    const colorValue = Math.floor(255-((value / max) * 255));
+    const colorValue = Math.floor(255 - ((value / max) * 255));
     return `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
   }
 }

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BinaryPageComponent } from './binary-page.component';
+import {BinaryPageComponent} from './binary-page.component';
 
 describe('BinaryPageComponent', () => {
   let component: BinaryPageComponent;
@@ -10,7 +10,7 @@ describe('BinaryPageComponent', () => {
     await TestBed.configureTestingModule({
       imports: [BinaryPageComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(BinaryPageComponent);
     component = fixture.componentInstance;

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MatchClockComponent } from './match-clock.component';
+import {MatchClockComponent} from './match-clock.component';
 
 describe('MatchClockComponent', () => {
   let component: MatchClockComponent;
@@ -10,7 +10,7 @@ describe('MatchClockComponent', () => {
     await TestBed.configureTestingModule({
       imports: [MatchClockComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(MatchClockComponent);
     component = fixture.componentInstance;

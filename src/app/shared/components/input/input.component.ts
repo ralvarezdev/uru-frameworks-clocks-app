@@ -28,14 +28,14 @@ export class InputComponent {
   @Input() error: string = '...';
   @Input() showError: boolean = false;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object){
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     isPlatformBrowser(this.platformId)
   }
 
   // Toggle password visibility
   togglePasswordVisibility(event: Event) {
-     if (this.isBrowser) {
-       this.passwordVisibility.update(prevPasswordVisibility => !prevPasswordVisibility)
-     }
+    if (this.isBrowser) {
+      this.passwordVisibility.update(prevPasswordVisibility => !prevPasswordVisibility)
+    }
   }
 }

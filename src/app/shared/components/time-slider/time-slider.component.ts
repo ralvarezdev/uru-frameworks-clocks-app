@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {SliderComponent} from '../slider/slider.component';
-import {identity} from 'rxjs';
 import {TimeService} from '../../../features/clocks/services/time/time.service';
 
 @Component({
@@ -17,7 +16,8 @@ export class TimeSliderComponent implements OnInit {
   secondSliderValue: number = 0;
   @Input() id = '';
 
-  constructor(private timeService: TimeService) {}
+  constructor(private timeService: TimeService) {
+  }
 
   // On init
   ngOnInit(): void {
@@ -27,7 +27,7 @@ export class TimeSliderComponent implements OnInit {
   }
 
   // Hour on input change
-  onHourChange(hour: number|null): void {
+  onHourChange(hour: number | null): void {
     if (hour === null)
       return;
 
@@ -36,7 +36,7 @@ export class TimeSliderComponent implements OnInit {
   }
 
   // Minute on input change
-  onMinuteChange(minute: number|null): void {
+  onMinuteChange(minute: number | null): void {
     if (minute === null)
       return;
 
@@ -45,7 +45,7 @@ export class TimeSliderComponent implements OnInit {
   }
 
   // Second on input change
-  onSecondChange(second: number|null): void {
+  onSecondChange(second: number | null): void {
     if (second === null)
       return
 

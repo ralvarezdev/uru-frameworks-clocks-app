@@ -1,10 +1,13 @@
 import {Component} from '@angular/core';
-import { TimeService } from '../../services/time/time.service';
+import {TimeService} from '../../services/time/time.service';
 import {BaseClockComponent} from '../base-clock/base-clock.component';
+import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-analog-clock',
-    imports: [],
+  imports: [
+    NgForOf
+  ],
   templateUrl: './analog-clock.component.html',
   styleUrl: './analog-clock.component.css'
 })

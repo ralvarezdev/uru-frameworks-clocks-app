@@ -1,6 +1,17 @@
-  <svg viewBox="0 0 100 100" class="analog-clock-container">
-    <circle cx="50" cy="50" r="48" class="analog-clock-container__clock-face"/>
-    <line x1="50" y1="50" x2="50" y2="20" [attr.transform]="'rotate(' + hourHandAngle + ' 50 50)'" class="analog-clock-container__hour-hand"/>
-    <line x1="50" y1="50" x2="50" y2="10" [attr.transform]="'rotate(' + minuteHandAngle + ' 50 50)'" class="analog-clock-container__minute-hand"/>
-    <line x1="50" y1="50" x2="50" y2="5" [attr.transform]="'rotate(' + secondHandAngle + ' 50 50)'" class="analog-clock-container__second-hand"/>
+<div class="analog-clock-container">
+  <div class="analog-clock-container__clock-face">
+    <div *ngFor="let number of [6,7,8,9,10,11,12,1,2,3,4,5]; let i = index"
+         class="analog-clock-container__clock-face__number"
+         [style.transform]="'rotate(' + (i * 30) + 'deg) translateY(80px) rotate(' + (-i * 30) + 'deg)'">
+      {{ number }}
+    </div>
+  </div>
+  <svg class="analog-clock-container__clock-hands-container" viewBox="0 0 100 100">
+    <line [attr.transform]="'rotate(' + hourHandAngle + ' 50 50)'" class="analog-clock-container__clock-hands-container__hour-hand" x1="50" x2="50" y1="50"
+          y2="20"/>
+    <line [attr.transform]="'rotate(' + minuteHandAngle + ' 50 50)'" class="analog-clock-container__clock-hands-container__minute-hand" x1="50" x2="50" y1="50"
+          y2="10"/>
+    <line [attr.transform]="'rotate(' + secondHandAngle + ' 50 50)'" class="analog-clock-container__clock-hands-container__second-hand" x1="50" x2="50" y1="50"
+          y2="5"/>
   </svg>
+</div>

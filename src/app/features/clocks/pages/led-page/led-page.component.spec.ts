@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { LedPageComponent } from './led-page.component';
+import {LedPageComponent} from './led-page.component';
 
 describe('LedPageComponent', () => {
   let component: LedPageComponent;
@@ -10,7 +10,7 @@ describe('LedPageComponent', () => {
     await TestBed.configureTestingModule({
       imports: [LedPageComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(LedPageComponent);
     component = fixture.componentInstance;

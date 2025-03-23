@@ -2,23 +2,49 @@
 .analog-clock-container {
   width: 200px;
   height: 200px;
-  gap: var(--gap--medium);
+  background-color: var(--grey--lightest);
+  border: 4px solid var(--grey--darkest);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
 }
 
 /* Clock face */
 .analog-clock-container__clock-face {
-  fill: var(--grey--lightest);
-  stroke: var(--grey--darkest);
-  stroke-width: 2px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+
+/* Number */
+.analog-clock-container__clock-face__number {
+  grid-column:1/-1;
+  grid-row: 1/-1;
+  font-size: var(--font-size--small);
+  font-weight: var(--font-weight--medium);
+  text-align: center;
+  color: var(--grey--darkest);
+  transform-origin: 50% 100%;
+}
+
+/* Clock hands container */
+.analog-clock-container__clock-hands-container {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  z-index: 2;
 }
 
 /* Clock hands */
-.analog-clock-container__hour-hand, .analog-clock-container__minute-hand, .analog-clock-container__second-hand {
+.analog-clock-container__clock-hands-container__hour-hand, .analog-clock-container__clock-hands-container__minute-hand, .analog-clock-container__clock-hands-container__second-hand {
+  grid-row: 1/-1;
+  grid-column: 1/-1;
   stroke: var(--grey--darkest);
   stroke-width: 2px;
   stroke-linecap: round;
 }
 
-.analog-clock-container__second-hand {
+.analog-clock-container__clock-hands-container__second-hand {
   stroke: var(--color--dark-primary);
 }

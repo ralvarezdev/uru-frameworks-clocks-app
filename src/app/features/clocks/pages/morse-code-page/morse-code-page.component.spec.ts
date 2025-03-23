@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MorseCodePageComponent } from './morse-code-page.component';
+import {MorseCodePageComponent} from './morse-code-page.component';
 
 describe('MorseCodePageComponent', () => {
   let component: MorseCodePageComponent;
@@ -10,7 +10,7 @@ describe('MorseCodePageComponent', () => {
     await TestBed.configureTestingModule({
       imports: [MorseCodePageComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(MorseCodePageComponent);
     component = fixture.componentInstance;
