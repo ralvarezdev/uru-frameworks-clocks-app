@@ -1,0 +1,26 @@
+<div class="seven-segment-clock-container">
+  <div class="seven-segment-clock-container__time-unit-container">
+    <div *ngFor="let digit of hours.split('')" class="seven-segment-clock-container__time-unit-container__time-unit">
+      <div class="seven-segment-clock-container__time-unit-container__time-unit__seven-segment">
+        <div *ngFor="let segment of getSegments(digit); let i = index" [ngClass]="getSegmentClassObject(segment, i+1)">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="seven-segment-clock-container__time-unit-container">
+    <div *ngFor="let digit of minutes.split('')" class="seven-segment-clock-container__time-unit-container__time-unit">
+      <div class="seven-segment-clock-container__time-unit-container__time-unit__seven-segment">
+        <div *ngFor="let segment of getSegments(digit); let i = index" [ngClass]="getSegmentClassObject(segment, i+1)">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="seven-segment-clock-container__time-unit-container">
+    <div *ngFor="let digit of seconds.split('')" class="seven-segment-clock-container__time-unit-container__time-unit">
+      <div class="seven-segment-clock-container__time-unit-container__time-unit__seven-segment">
+        <div *ngFor="let segment of getSegments(digit); let i = index" [ngClass]="getSegmentClassObject(segment, i+1)">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

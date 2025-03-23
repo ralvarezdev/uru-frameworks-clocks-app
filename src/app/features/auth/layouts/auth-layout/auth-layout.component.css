@@ -43,12 +43,9 @@
 
 /* Logo */
 .main-container__logo {
-  grid-row: 1/-1;
-  grid-column: 1/-1;
-  justify-self: end;
-  align-self: start;
+  position: absolute;
   top: var(--absolute--top);
-  left: var(--absolute--right);
+  right: var(--absolute--right);
   object-fit: cover;
 }
 

@@ -1,18 +1,18 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {MatchPageComponent} from './match-page.component';
+import {SevenSegmentPageComponent} from './seven-segment-page.component';
 
 describe('MatchPageComponent', () => {
-  let component: MatchPageComponent;
-  let fixture: ComponentFixture<MatchPageComponent>;
+  let component: SevenSegmentPageComponent;
+  let fixture: ComponentFixture<SevenSegmentPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MatchPageComponent]
+      imports: [SevenSegmentPageComponent]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(MatchPageComponent);
+    fixture = TestBed.createComponent(SevenSegmentPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

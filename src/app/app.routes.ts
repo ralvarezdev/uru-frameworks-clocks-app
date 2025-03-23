@@ -6,7 +6,7 @@ import {AnalogPageComponent} from './features/clocks/pages/analog-page/analog-pa
 import {BinaryPageComponent} from './features/clocks/pages/binary-page/binary-page.component';
 import {DigitalPageComponent} from './features/clocks/pages/digital-page/digital-page.component';
 import {LedPageComponent} from './features/clocks/pages/led-page/led-page.component';
-import {MatchPageComponent} from './features/clocks/pages/match-page/match-page.component';
+import {SevenSegmentPageComponent} from './features/clocks/pages/seven-segment-page/seven-segment-page.component';
 import {MorseCodePageComponent} from './features/clocks/pages/morse-code-page/morse-code-page.component';
 import {MosaicPageComponent} from './features/clocks/pages/mosaic-page/mosaic-page.component';
 import {RgbPageComponent} from './features/clocks/pages/rgb-page/rgb-page.component';
@@ -24,7 +24,7 @@ export const routes: Routes = [
   {path: 'clocks/binary', component: BinaryPageComponent, canActivate:[AuthGuard]},
   {path: 'clocks/digital', component: DigitalPageComponent, canActivate:[AuthGuard]},
   {path: 'clocks/led', component: LedPageComponent, canActivate:[AuthGuard]},
-  {path: 'clocks/match', component: MatchPageComponent, canActivate:[AuthGuard]},
+  {path: 'clocks/seven-segment', component: SevenSegmentPageComponent, canActivate:[AuthGuard]},
   {path: 'clocks/morse-code', component: MorseCodePageComponent, canActivate:[AuthGuard]},
   {path: 'clocks/mosaic', component: MosaicPageComponent, canActivate:[AuthGuard]},
   {path: 'clocks/rgb', component: RgbPageComponent, canActivate:[AuthGuard]},
@@ -36,7 +36,7 @@ export const routes: Routes = [
   {path: 'clocks/binary', component: BinaryPageComponent},
   {path: 'clocks/digital', component: DigitalPageComponent},
   {path: 'clocks/led', component: LedPageComponent},
-  {path: 'clocks/match', component: MatchPageComponent},
+  {path: 'clocks/seven-segment', component: SevenSegmentPageComponent},
   {path: 'clocks/morse-code', component: MorseCodePageComponent},
   {path: 'clocks/mosaic', component: MosaicPageComponent},
   {path: 'clocks/rgb', component: RgbPageComponent},

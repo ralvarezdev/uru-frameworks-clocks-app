@@ -1,18 +1,18 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {MatchClockComponent} from './match-clock.component';
+import {SevenSegmentClockComponent} from './seven-segment-clock.component';
 
 describe('MatchClockComponent', () => {
-  let component: MatchClockComponent;
-  let fixture: ComponentFixture<MatchClockComponent>;
+  let component: SevenSegmentClockComponent;
+  let fixture: ComponentFixture<SevenSegmentClockComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MatchClockComponent]
+      imports: [SevenSegmentClockComponent]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(MatchClockComponent);
+    fixture = TestBed.createComponent(SevenSegmentClockComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

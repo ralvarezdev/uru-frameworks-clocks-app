@@ -9,6 +9,14 @@
   color: var(--grey--darkest);
 }
 
+/* Logo */
+.main-container__logo {
+  position: absolute;
+  top: var(--absolute--top);
+  right: var(--absolute--right);
+  object-fit: cover;
+}
+
 /* Title */
 .main-container__title {
   background-color: var(--color--dark-primary);

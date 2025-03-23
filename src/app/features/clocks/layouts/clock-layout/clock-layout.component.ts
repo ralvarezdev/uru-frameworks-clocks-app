@@ -1,8 +1,9 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
 import {TimeSliderComponent} from "../../../../shared/components/time-slider/time-slider.component";
 import {ButtonComponent} from '../../../../shared/components/button/button.component';
-import {NgClass} from '@angular/common';
+import {NgClass, NgOptimizedImage} from '@angular/common';
 import {Router} from '@angular/router';
+import {LOGO_HEIGHT, LOGO_WIDTH} from '../../../../../constants';
 
 // Clocks ID by name
 const ClocksIDByName: Record<string, number> = {
@@ -11,7 +12,7 @@ const ClocksIDByName: Record<string, number> = {
   'binary': 3,
   'digital': 4,
   'led': 5,
-  'match': 6,
+  'seven-segment': 6,
   'morse-code': 7,
   'mosaic': 8,
   'rgb': 9,
@@ -25,7 +26,7 @@ const ClocksNameByID: Record<number, string> = {
   3: 'binary',
   4: 'digital',
   5: 'led',
-  6: 'match',
+  6: 'seven-segment',
   7: 'morse-code',
   8: 'mosaic',
   9: 'rgb',
@@ -38,6 +39,7 @@ const ClocksNameByID: Record<number, string> = {
     TimeSliderComponent,
     ButtonComponent,
     NgClass,
+    NgOptimizedImage,
   ],
   templateUrl: './clock-layout.component.html',
   styleUrl: './clock-layout.component.css',
@@ -47,6 +49,8 @@ export class ClockLayoutComponent {
   clockID: number = 0;
   clockName: string = '';
   @Input() title: string = '';
+  logoHeight: number = LOGO_HEIGHT;
+  logoWidth: number = LOGO_WIDTH;
 
   constructor(private router: Router) {
     this.clockName = this.router.url.split('/').pop() || '';

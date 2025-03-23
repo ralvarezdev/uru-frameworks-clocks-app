@@ -1,4 +1,6 @@
 <div class="main-container">
+  <img [height]="logoHeight" [width]="logoWidth" alt="logo"
+       class="main-container__logo" ngSrc="/assets/images/klock--var2--logo.svg"/>
   <h1 class="main-container__title">{{ title }}</h1>
   <app-button (clickHandler)="onLeftArrowClick($event)"
               [ngClass]="{'main-container__button': true, 'main-container__button--left': true}">

@@ -4,15 +4,15 @@ import {NgClass, NgForOf} from '@angular/common';
 import {BaseClockComponent} from '../base-clock/base-clock.component';
 
 @Component({
-  selector: 'app-match-clock',
+  selector: 'app-seven-segment-clock',
   imports: [
     NgForOf,
     NgClass
   ],
-  templateUrl: './match-clock.component.html',
-  styleUrl: './match-clock.component.css'
+  templateUrl: './seven-segment-clock.component.html',
+  styleUrl: './seven-segment-clock.component.css'
 })
-export class MatchClockComponent extends BaseClockComponent {
+export class SevenSegmentClockComponent extends BaseClockComponent {
   hours: string = '';
   minutes: string = '';
   seconds: string = '';
@@ -60,12 +60,12 @@ export class MatchClockComponent extends BaseClockComponent {
     return [];
   }
 
-  // Get the class object
-  getClassObject(segment: number): object {
+  // Get the segment class object
+  getSegmentClassObject(isActive: number, segment: number): object {
     return {
       'segment': true,
-      'active': segment,
-      [`segment--${segment + 1}`]: true
+      'segment--active': isActive===1,
+      [`segment--${segment}`]: true
     };
   }
 }

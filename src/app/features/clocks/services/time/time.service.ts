@@ -53,8 +53,8 @@ export class TimeService {
     }, 1000)
   }
 
-  // Stop the time service
-  stop() {
+  // Clear the time service interval
+  clear() {
     if (this.#interval) {
       clearInterval(this.#interval)
       this.#interval = null

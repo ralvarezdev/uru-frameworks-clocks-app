@@ -17,7 +17,7 @@ export abstract class BaseClockComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.timeService.stop();
+    this.timeService.clear();
     if (this.#interval) {
       clearInterval(this.#interval);
     }
