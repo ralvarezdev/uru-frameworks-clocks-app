@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {TimeService} from '../../services/time/time.service';
 import {LabelComponent} from '../../../../shared/components/label/label.component';
+import {BaseClockComponent} from '../base-clock/base-clock.component';
 
 // Define a map of Morse code representations for each digit
 const morseCodeMap: { [key: number]: string } = {
@@ -16,21 +17,13 @@ const morseCodeMap: { [key: number]: string } = {
   templateUrl: './morse-code-clock.component.html',
   styleUrl: './morse-code-clock.component.css'
 })
-export class MorseCodeClockComponent implements OnInit {
+export class MorseCodeClockComponent extends BaseClockComponent{
   hours: string = '';
   minutes: string = '';
   seconds: string = '';
 
-  constructor(private timeService: TimeService) {}
-
-  // On init, update the time and set an interval to update the time every second
-  ngOnInit(): void {
-    this.updateTime();
-    setInterval(() =>  {
-      console.log('Updating Morse Code Clock');
-      this.timeService.increaseBySeconds(1)
-      this.updateTime()
-    }, 1000);
+  constructor(protected override timeService: TimeService) {
+    super(timeService);
   }
 
   // Update the time by converting the hours, minutes, and seconds to Morse code

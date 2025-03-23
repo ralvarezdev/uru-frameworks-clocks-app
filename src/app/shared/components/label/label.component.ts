@@ -1,24 +1,12 @@
 import {Component, Input} from '@angular/core';
-import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-label',
-  imports: [
-    NgClass
-  ],
+  imports: [],
   templateUrl: './label.component.html',
   styleUrl: './label.component.css'
 })
 export class LabelComponent {
   @Input() label: string = '';
   @Input() for: string = '';
-  @Input() additionalClassName: string = '';
-
-  // Get class object
-  getClassObject() {
-    return {
-      'label': true,
-      [this.additionalClassName]: !!this.additionalClassName
-    };
-  }
 }

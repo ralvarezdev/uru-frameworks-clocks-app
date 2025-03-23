@@ -1,34 +1,25 @@
 import {Component, Input, Output, EventEmitter, Inject, PLATFORM_ID} from '@angular/core';
-import {isPlatformBrowser, NgClass} from '@angular/common';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-button',
-  imports: [
-    NgClass
-  ],
+  imports: [],
   templateUrl: './button.component.html',
   styleUrl: './button.component.css'
 })
 export class ButtonComponent {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object){}
-
+  isBrowser: boolean = false;
   @Input() type: string = 'button';
   @Input() disabled: boolean = false;
-  @Input() additionalClassName: string = '';
   @Output() clickHandler: EventEmitter<Event> = new EventEmitter<Event>();
 
-  // Get class object
-  getClassObject() {
-    return {
-      'button': true,
-      [this.additionalClassName]: !!this.additionalClassName
-    };
+  constructor(@Inject(PLATFORM_ID) private platformId: Object){
+    this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
   // Emit click event
   onClick(event: Event) {
-    if (isPlatformBrowser(this.platformId)) {
-      console.log(1)
+    if (this.isBrowser) {
       this.clickHandler.emit(event);
     }
   }

@@ -21,8 +21,8 @@ export const routes: Routes = [
   {path: 'sign-up', component: SignUpPageComponent, canActivate:[NotAuthGuard]},
   /*
   {path: 'clocks/abacus', component: AbacusPageComponent, canActivate:[AuthGuard]},
-  {path: 'clocks/analog', component: AnalogClockPageComponent, canActivate:[AuthGuard]},
-  {path: 'clocks/binary', component: BinaryClockPageComponent, canActivate:[AuthGuard]},
+  {path: 'clocks/analog', component: AnalogPageComponent, canActivate:[AuthGuard]},
+  {path: 'clocks/binary', component: BinaryPageComponent, canActivate:[AuthGuard]},
   {path: 'clocks/digital', component: DigitalPageComponent, canActivate:[AuthGuard]},
   {path: 'clocks/led', component: LedPageComponent, canActivate:[AuthGuard]},
   {path: 'clocks/match', component: MatchPageComponent, canActivate:[AuthGuard]},

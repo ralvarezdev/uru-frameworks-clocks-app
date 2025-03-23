@@ -1,5 +1,15 @@
 <div class="main-container">
   <h1 class="main-container__title">{{title}}</h1>
+  <app-button [ngClass]="{'main-container__button': true, 'main-container__button--left': true}" (clickHandler)="onLeftArrowClick($event)">
+    <span class="material-symbols-outlined main-container__button__arrow" style="rotate: 180deg">
+      chevron_right
+    </span>
+  </app-button>
+  <app-button [ngClass]="{'main-container__button': true, 'main-container__button--right': true}" (clickHandler)="onRightArrowClick($event)">
+    <span class="material-symbols-outlined main-container__button__arrow">
+      chevron_right
+    </span>
+  </app-button>
   <ng-content></ng-content>
   <app-time-slider></app-time-slider>
 </div>

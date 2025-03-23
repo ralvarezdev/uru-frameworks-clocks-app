@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {TimeService} from '../../services/time/time.service';
 import {NgForOf} from '@angular/common';
 import {LabelComponent} from '../../../../shared/components/label/label.component';
+import {BaseClockComponent} from '../base-clock/base-clock.component';
 
 @Component({
   selector: 'app-led-clock',
@@ -12,21 +13,13 @@ import {LabelComponent} from '../../../../shared/components/label/label.componen
   templateUrl: './led-clock.component.html',
   styleUrl: './led-clock.component.css'
 })
-export class LedClockComponent implements OnInit {
+export class LedClockComponent extends BaseClockComponent {
   hours: number = 0;
   minutes: number = 0;
   seconds: number = 0;
 
-  constructor(private timeService: TimeService) {}
-
-  // On init, update the time and set an interval to update the time every second
-  ngOnInit(): void {
-    this.updateTime();
-    setInterval(() =>  {
-      console.log('Updating LED Clock');
-      this.timeService.increaseBySeconds(1)
-      this.updateTime()
-    }, 1000);
+  constructor(protected override timeService: TimeService) {
+    super(timeService);
   }
 
   // Update the time

@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {NgOptimizedImage} from '@angular/common';
+import {NgClass, NgOptimizedImage} from '@angular/common';
 import {LOGO_HEIGHT, LOGO_WIDTH} from '../../../../../constants';
 import {ButtonComponent} from '../../../../shared/components/button/button.component';
 import {FormsModule} from '@angular/forms';
@@ -10,6 +10,7 @@ import {FormsModule} from '@angular/forms';
     NgOptimizedImage,
     ButtonComponent,
     FormsModule,
+    NgClass,
   ],
   templateUrl: './auth-layout.component.html',
   styleUrl: './auth-layout.component.css'

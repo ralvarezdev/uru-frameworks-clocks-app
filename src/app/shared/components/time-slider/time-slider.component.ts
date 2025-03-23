@@ -15,7 +15,6 @@ export class TimeSliderComponent implements OnInit {
   hourSliderValue: number = 0;
   minuteSliderValue: number = 0;
   secondSliderValue: number = 0;
-
   @Input() id = '';
 
   constructor(private timeService: TimeService) {}

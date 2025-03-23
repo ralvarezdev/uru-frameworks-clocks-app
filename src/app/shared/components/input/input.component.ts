@@ -1,5 +1,5 @@
-import {Component, computed, Inject, Input, OnInit, PLATFORM_ID, signal} from '@angular/core';
-import {isPlatformBrowser, NgStyle} from '@angular/common';
+import {Component, Inject, Input, PLATFORM_ID, signal, ViewEncapsulation} from '@angular/core';
+import {isPlatformBrowser, NgClass, NgStyle} from '@angular/common';
 import {ButtonComponent} from '../button/button.component';
 import {LabelComponent} from '../label/label.component';
 
@@ -8,17 +8,16 @@ import {LabelComponent} from '../label/label.component';
   imports: [
     NgStyle,
     ButtonComponent,
-    LabelComponent
+    LabelComponent,
+    NgClass
   ],
   templateUrl: './input.component.html',
-  styleUrl: './input.component.css'
+  styleUrl: './input.component.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class InputComponent {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object){}
-
-  // Visibility
+  isBrowser: boolean = false;
   passwordVisibility = signal<boolean>(true)
-
   @Input() id: string = '';
   @Input() label: string = '';
   @Input() type: string = 'text';
@@ -29,10 +28,13 @@ export class InputComponent {
   @Input() error: string = '...';
   @Input() showError: boolean = false;
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object){
+    isPlatformBrowser(this.platformId)
+  }
+
   // Toggle password visibility
   togglePasswordVisibility(event: Event) {
-     if (isPlatformBrowser(this.platformId)) {
-       console.log(2)
+     if (this.isBrowser) {
        this.passwordVisibility.update(prevPasswordVisibility => !prevPasswordVisibility)
      }
   }

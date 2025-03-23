@@ -23,7 +23,7 @@ import {isPlatformBrowser, NgIf} from '@angular/common';
 })
 export class SliderComponent implements OnInit {
   isBrowser: boolean = false;
-  @Input() valueControl: FormControl = new FormControl();
+  @Input() valueControl: FormControl = new FormControl(0);
   @Input() initialValue: number = 0;
   @Input() id: string = '';
   @Input() label: string = 'Slider';
@@ -40,6 +40,7 @@ export class SliderComponent implements OnInit {
   // On init
   ngOnInit(): void {
     if (this.isBrowser) {
+      console.log('SliderComponent initialized');
       this.valueControl.valueChanges.subscribe(value => this.valueChange.emit(value));
     }
   }

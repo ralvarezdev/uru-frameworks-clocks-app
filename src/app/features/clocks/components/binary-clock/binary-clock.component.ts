@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {TimeService} from '../../services/time/time.service';
 import {LabelComponent} from '../../../../shared/components/label/label.component';
+import {BaseClockComponent} from '../base-clock/base-clock.component';
 
 @Component({
   selector: 'app-binary-clock',
@@ -10,21 +11,13 @@ import {LabelComponent} from '../../../../shared/components/label/label.componen
   templateUrl: './binary-clock.component.html',
   styleUrl: './binary-clock.component.css'
 })
-export class BinaryClockComponent implements OnInit {
+export class BinaryClockComponent extends BaseClockComponent{
   hours: string = '';
   minutes: string = '';
   seconds: string = '';
 
-  constructor(private timeService: TimeService) {}
-
-  // On init, update the time and set an interval to update the time every second
-  ngOnInit(): void {
-    this.updateTime();
-    setInterval(() =>  {
-      console.log('Updating Binary Clock');
-      this.timeService.increaseBySeconds(1)
-      this.updateTime()
-    }, 1000);
+  constructor(protected override timeService: TimeService) {
+    super(timeService);
   }
 
   // Update the time by converting the hours, minutes, and seconds to binary

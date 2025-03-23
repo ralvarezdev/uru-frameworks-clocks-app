@@ -1,32 +1,26 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import { TimeService } from '../../services/time/time.service';
 import {LabelComponent} from '../../../../shared/components/label/label.component';
+import {NgClass} from '@angular/common';
+import {BaseClockComponent} from '../base-clock/base-clock.component';
 
 @Component({
   selector: 'app-roman-clock',
   imports: [
-    LabelComponent
+    LabelComponent,
+    NgClass
   ],
   templateUrl: './roman-clock.component.html',
   styleUrl: './roman-clock.component.css'
 })
-export class RomanClockComponent implements OnInit {
+export class RomanClockComponent extends BaseClockComponent {
   hours: string = '';
   minutes: string = '';
   seconds: string = '';
 
-  constructor(private timeService: TimeService) {}
-
-  // On init, update the time and set an interval to update the time every second
-  ngOnInit(): void {
-    this.updateTime();
-    setInterval(() =>  {
-      console.log('Updating Roman Clock');
-      this.timeService.increaseBySeconds(1)
-      this.updateTime()
-    }, 1000);
+  constructor(protected override timeService: TimeService) {
+    super(timeService);
   }
-
   // Update the time
   updateTime(): void {
     this.hours = this.toRoman(this.timeService.hours);

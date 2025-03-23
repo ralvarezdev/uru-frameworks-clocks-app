@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {TimeService} from '../../services/time/time.service';
+import {BaseClockComponent} from '../base-clock/base-clock.component';
 
 @Component({
   selector: 'app-digital-clock',
@@ -7,19 +8,11 @@ import {TimeService} from '../../services/time/time.service';
   templateUrl: './digital-clock.component.html',
   styleUrl: './digital-clock.component.css'
 })
-export class DigitalClockComponent implements OnInit {
+export class DigitalClockComponent extends BaseClockComponent {
   time: string = '';
 
-  constructor(private timeService: TimeService) {}
-
-  // On init, update the time and set an interval to update the time every second
-  ngOnInit(): void {
-    this.updateTime();
-    setInterval(() =>  {
-      console.log('Updating Digital Clock');
-      this.timeService.increaseBySeconds(1)
-      this.updateTime()
-    }, 1000);
+  constructor(protected override timeService: TimeService) {
+    super(timeService);
   }
 
   // Update the time

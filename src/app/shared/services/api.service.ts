@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-//import {environment} from '../../../environment';
+import config from '../../../config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
   fetch(relativePath: string, body?: any) {
-    // environment['HOST']
-    return fetch( 'http://localhost:8080/api'+ relativePath, {
+    return fetch(config.HOST + relativePath, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -33,7 +33,7 @@
   appearance: none;
   width: var(--slider--thumb--size);
   height: var(--slider--thumb--size);
-  background: var(--grey--darkest);
+  background: var(--color--dark-primary);
   border-radius: 50%;
   cursor: pointer;
 }
@@ -41,7 +41,7 @@
 .slider-container__input::-moz-range-thumb {
   width: var(--slider--thumb--size);
   height: var(--slider--thumb--size);
-  background: var(--grey--darkest);
+  background: var(--color--medium-primary);
   cursor: pointer;
 }
 

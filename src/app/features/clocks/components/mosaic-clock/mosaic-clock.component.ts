@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {TimeService} from '../../services/time/time.service';
 import {NgClass, NgForOf, NgStyle} from '@angular/common';
 import {LabelComponent} from '../../../../shared/components/label/label.component';
+import {BaseClockComponent} from '../base-clock/base-clock.component';
 
 // Generate a random color for each number
 const generateRandomColor = () => `#${Math.floor(Math.random()*16777215).toString(16)}`;
@@ -20,7 +21,7 @@ const secondsColors = Array.from({ length: 60 }, generateRandomColor);
   templateUrl: './mosaic-clock.component.html',
   styleUrl: './mosaic-clock.component.css'
 })
-export class MosaicClockComponent implements OnInit {
+export class MosaicClockComponent extends BaseClockComponent {
   hours: number = 0;
   minutes: number = 0;
   seconds: number = 0;
@@ -28,16 +29,8 @@ export class MosaicClockComponent implements OnInit {
   minutesMosaic: number[] = [];
   secondsMosaic: number[] = [];
 
-  constructor(private timeService: TimeService) {}
-
-  // On init, update the time and set an interval to update the time every second
-  ngOnInit(): void {
-    this.updateTime();
-    setInterval(() =>  {
-      console.log('Updating Morse COde Clock');
-      this.timeService.increaseBySeconds(1)
-      this.updateTime()
-    }, 1000);
+  constructor(protected override timeService: TimeService) {
+    super(timeService);
   }
 
   // Update the time

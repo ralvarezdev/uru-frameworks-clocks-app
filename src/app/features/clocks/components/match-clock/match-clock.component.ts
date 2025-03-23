@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {TimeService} from '../../services/time/time.service';
 import {NgClass, NgForOf} from '@angular/common';
+import {BaseClockComponent} from '../base-clock/base-clock.component';
 
 @Component({
   selector: 'app-match-clock',
@@ -11,21 +12,13 @@ import {NgClass, NgForOf} from '@angular/common';
   templateUrl: './match-clock.component.html',
   styleUrl: './match-clock.component.css'
 })
-export class MatchClockComponent implements OnInit {
+export class MatchClockComponent extends BaseClockComponent {
   hours: string = '';
   minutes: string = '';
   seconds: string = '';
 
-  constructor(private timeService: TimeService) {}
-
-  // On init, update the time and set an interval to update the time every second
-  ngOnInit(): void {
-    this.updateTime();
-    setInterval(() =>  {
-      console.log('Updating Match Clock');
-      this.timeService.increaseBySeconds(1)
-      this.updateTime()
-    }, 1000);
+  constructor(protected override timeService: TimeService) {
+    super(timeService);
   }
 
   // Update the time and format the time units

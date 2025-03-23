@@ -4,10 +4,32 @@ import {Injectable, signal} from '@angular/core';
   providedIn: 'root'
 })
 export class TimeService {
-  #initTime = new Date()
-  #seconds = signal<number>(this.#initTime.getSeconds())
-  #minutes = signal<number>(this.#initTime.getMinutes())
-  #hours = signal<number>(this.#initTime.getHours())
+  #seconds = signal<number>(0)
+  #minutes = signal<number>(0)
+  #hours = signal<number>(0)
+  #interval: NodeJS.Timeout | null = null
+
+  // Start the time service
+  start(){
+    // Set the time
+    const time = new Date()
+    this.seconds = time.getSeconds()
+    this.minutes = time.getMinutes()
+    this.hours = time.getHours()
+
+    // Set an interval to increase the time by seconds
+    this.#interval=setInterval(()=>{
+      this.increaseBySeconds(1)
+    }, 1000)
+  }
+
+  // Stop the time service
+  stop(){
+    if(this.#interval){
+      clearInterval(this.#interval)
+      this.#interval=null
+    }
+  }
 
   // Increase the seconds
   increaseBySeconds(seconds: number){
@@ -41,7 +63,7 @@ export class TimeService {
   increaseByHours(hours: number){
     this.#hours.update((currentHours)=>{
       // Increase the hours signal
-      return (currentHours+hours)%60
+      return (currentHours+hours)%24
     })
   }
 

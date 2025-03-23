@@ -1,6 +1,7 @@
 /* Button */
 .button {
   border-radius: var(--border-radius--small);
+  background-color: transparent;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -81,7 +82,6 @@
 
 /* Transparent button */
 .button--transparent {
-  background-color: transparent;
   color: var(--grey--darkest);
   padding: var(--margin--extra-small);
 }
