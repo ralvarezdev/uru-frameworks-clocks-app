@@ -7,7 +7,7 @@
 }
 
 /* Label */
-.slider-container app-label {
+.slider-container__label {
   text-align: end;
 }
 

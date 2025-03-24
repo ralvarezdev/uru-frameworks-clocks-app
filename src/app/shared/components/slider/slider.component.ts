@@ -1,7 +1,7 @@
-import {Component, EventEmitter, Inject, Input, OnInit, Output, PLATFORM_ID,} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnInit, Output, PLATFORM_ID, ViewEncapsulation,} from '@angular/core';
 import {LabelComponent} from '../label/label.component';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
-import {isPlatformBrowser, NgIf} from '@angular/common';
+import {isPlatformBrowser, NgClass, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-slider',
@@ -10,8 +10,10 @@ import {isPlatformBrowser, NgIf} from '@angular/common';
     LabelComponent,
     ReactiveFormsModule,
     NgIf,
+    NgClass,
   ],
-  styleUrl: './slider.component.css'
+  styleUrl: './slider.component.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class SliderComponent implements OnInit {
   isBrowser: boolean = false;

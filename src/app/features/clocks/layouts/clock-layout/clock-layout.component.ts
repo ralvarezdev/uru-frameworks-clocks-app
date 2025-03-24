@@ -48,6 +48,8 @@ const ClocksNameByID: Record<number, string> = {
 export class ClockLayoutComponent {
   clockID: number = 0;
   clockName: string = '';
+  pageNumber: number = 0;
+  maxPageNumber: number = 0;
   @Input() title: string = '';
   logoHeight: number = LOGO_HEIGHT;
   logoWidth: number = LOGO_WIDTH;
@@ -55,19 +57,21 @@ export class ClockLayoutComponent {
   constructor(private router: Router) {
     this.clockName = this.router.url.split('/').pop() || '';
     this.clockID = ClocksIDByName?.[this.clockName];
+    this.pageNumber = this.clockID
+    this.maxPageNumber = Object.keys(ClocksIDByName).length
   }
 
   // On Left Arrow Click
   onLeftArrowClick(event: Event): void {
-    this.clockID = this.clockID > 1 ? this.clockID - 1 : 10;
-    this.clockName = ClocksNameByID?.[this.clockID];
-    this.router.navigateByUrl('/clocks/' + this.clockName, {skipLocationChange: false, replaceUrl: true});
+    const newClockID = this.clockID > 1 ? this.clockID - 1 : 10;
+    const newClockName = ClocksNameByID?.[newClockID];
+    this.router.navigateByUrl('/clocks/' + newClockName, {skipLocationChange: false, replaceUrl: true});
   }
 
   // On Right Arrow Click
   onRightArrowClick(event: Event): void {
-    this.clockID = this.clockID < 10 ? this.clockID + 1 : 1;
-    this.clockName = ClocksNameByID?.[this.clockID];
-    this.router.navigateByUrl('/clocks/' + this.clockName, {skipLocationChange: false, replaceUrl: true});
+    const newClockID = this.clockID < 10 ? this.clockID + 1 : 1;
+    const newClockName = ClocksNameByID?.[newClockID];
+    this.router.navigateByUrl('/clocks/' + newClockName, {skipLocationChange: false, replaceUrl: true});
   }
 }

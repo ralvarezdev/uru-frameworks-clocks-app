@@ -35,6 +35,6 @@ export class MorseCodeClockComponent extends BaseClockComponent {
 
   // Convert a number to Morse code
   toMorse(num: number): string {
-    return num.toString().split('').map(digit => morseCodeMap[parseInt(digit)]).join(' ');
+    return num.toString().padStart(2, "0").split('').map(digit => morseCodeMap[parseInt(digit)]).join(' ');
   }
 }

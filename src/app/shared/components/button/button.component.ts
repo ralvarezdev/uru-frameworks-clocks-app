@@ -1,11 +1,12 @@
-import {Component, EventEmitter, Inject, Input, Output, PLATFORM_ID} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, Output, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
 import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-button',
   imports: [],
   templateUrl: './button.component.html',
-  styleUrl: './button.component.css'
+  styleUrl: './button.component.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class ButtonComponent {
   isBrowser: boolean = false;

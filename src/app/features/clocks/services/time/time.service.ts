@@ -39,7 +39,7 @@ export class TimeService {
     this.#hours.update(() => hours)
   }
 
-  // Start the time service
+  // Start the time interval
   start() {
     // Set the time
     const time = new Date()
@@ -53,12 +53,18 @@ export class TimeService {
     }, 1000)
   }
 
-  // Clear the time service interval
+  // Clear the time interval
   clear() {
     if (this.#interval) {
       clearInterval(this.#interval)
       this.#interval = null
     }
+  }
+
+  // Reset the time interval
+  reset() {
+    this.clear()
+    this.start()
   }
 
   // Increase the seconds

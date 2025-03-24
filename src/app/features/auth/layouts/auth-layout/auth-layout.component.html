@@ -8,8 +8,8 @@
     <ng-form class="main-container__form-container__content-container">
       <ng-content></ng-content>
       <div class="main-container__form-container__content-container__footer-container">
-        <app-button [ngClass]="{'button--primary':true}" [type]="'reset'">Cancel</app-button>
-        <app-button [ngClass]="{'button--primary--filled':true}" [type]="'submit'">Submit</app-button>
+        <app-button [ngClass]="{'button--primary--not-filled':true}" [type]="'reset'">Cancel</app-button>
+        <app-button [ngClass]="{'button--primary':true}" [type]="'submit'">Submit</app-button>
       </div>
     </ng-form>
   </div>

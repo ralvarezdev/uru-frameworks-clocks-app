@@ -1,8 +1,10 @@
 <div class="time-slider-container">
-  <app-slider (valueChange)="onHourChange($event)" [id]="id + '--hour'" [initialValue]="hourSliderValue" [label]="'Hour'" [max]="23" [min]="0"
-              [step]="1"></app-slider>
-  <app-slider (valueChange)="onMinuteChange($event)" [id]="id + '--minute'" [initialValue]="minuteSliderValue" [label]="'Minute'" [max]="59"
-              [min]="0" [step]="1"></app-slider>
-  <app-slider (valueChange)="onSecondChange($event)" [id]="id + '--second'" [initialValue]="secondSliderValue" [label]="'Second'" [max]="59"
-              [min]="0" [step]="1"></app-slider>
+  <div class="time-slider-container__sliders-container">
+    <app-slider (valueChange)="onHourChange($event)" [id]="id + '--hour'" [label]="'Hour'" [max]="23" [min]="0" [step]="1" [valueControl]="hourSliderValue"></app-slider>
+    <app-slider (valueChange)="onMinuteChange($event)" [id]="id + '--minute'" [label]="'Minute'" [max]="59" [min]="0" [step]="1" [valueControl]="minuteSliderValue"></app-slider>
+    <app-slider (valueChange)="onSecondChange($event)" [id]="id + '--second'" [label]="'Second'" [max]="59" [min]="0" [step]="1" [valueControl]="secondSliderValue"></app-slider>
+  </div>
+  <div class="time-slider-container__footer">
+    <app-button [ngClass]="{'button--primary--not-filled':true}" (clickHandler)="onReset($event)">Reset</app-button>
+  </div>
 </div>

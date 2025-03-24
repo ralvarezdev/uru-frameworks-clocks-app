@@ -1,55 +1,74 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {SliderComponent} from '../slider/slider.component';
 import {TimeService} from '../../../features/clocks/services/time/time.service';
+import {NgClass} from '@angular/common';
+import {ButtonComponent} from '../button/button.component';
+import {FormControl} from '@angular/forms';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-time-slider',
   imports: [
-    SliderComponent
+    SliderComponent,
+    NgClass,
+    ButtonComponent
   ],
   templateUrl: './time-slider.component.html',
-  styleUrl: './time-slider.component.css'
+  styleUrl: './time-slider.component.css',
+  encapsulation: ViewEncapsulation.None
 })
-export class TimeSliderComponent implements OnInit {
-  hourSliderValue: number = 0;
-  minuteSliderValue: number = 0;
-  secondSliderValue: number = 0;
+export class TimeSliderComponent implements OnInit, OnDestroy {
+  private subscriptions: Subscription[] = [];
+  hourSliderValue: FormControl = new FormControl(0);
+  minuteSliderValue: FormControl = new FormControl(0);
+  secondSliderValue: FormControl = new FormControl(0);
   @Input() id = '';
 
-  constructor(private timeService: TimeService) {
+  constructor(private timeService: TimeService) {}
+
+  ngOnInit(): void {
+    // Subscribe to FormControl value changes
+    this.subscriptions.push(
+      this.hourSliderValue.valueChanges.subscribe(value => this.timeService.hours = value),
+      this.minuteSliderValue.valueChanges.subscribe(value => this.timeService.minutes = value),
+      this.secondSliderValue.valueChanges.subscribe(value => this.timeService.seconds = value)
+    );
+
+    // Set the initial state
+    this.setInitialState();
   }
 
-  // On init
-  ngOnInit(): void {
-    this.hourSliderValue = this.timeService.hours;
-    this.minuteSliderValue = this.timeService.minutes;
-    this.secondSliderValue = this.timeService.seconds;
+  ngOnDestroy(): void {
+    // Unsubscribe from all subscriptions
+    this.subscriptions.forEach(sub => sub.unsubscribe());
+  }
+
+  // Set the initial state
+  setInitialState(): void {
+    // Update FormControl values when signals change
+    this.hourSliderValue.setValue(0, { emitEvent: false });
+    this.minuteSliderValue.setValue(0, { emitEvent: false });
+    this.secondSliderValue.setValue(0, { emitEvent: false });
   }
 
   // Hour on input change
   onHourChange(hour: number | null): void {
-    if (hour === null)
-      return;
-
-    console.log('Hours changed to: ', hour);
-    this.timeService.hours = hour;
+    this.hourSliderValue.setValue(hour);
   }
 
   // Minute on input change
   onMinuteChange(minute: number | null): void {
-    if (minute === null)
-      return;
-
-    console.log('Minutes changed to: ', minute);
-    this.timeService.minutes = minute;
+    this.minuteSliderValue.setValue(minute);
   }
 
   // Second on input change
   onSecondChange(second: number | null): void {
-    if (second === null)
-      return
+    this.secondSliderValue.setValue(second);
+  }
 
-    console.log('Seconds changed to: ', second);
-    this.timeService.seconds = second;
+  // On Reset
+  onReset(event: Event) {
+    this.timeService.reset()
+    this.setInitialState()
   }
 }

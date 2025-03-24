@@ -52,8 +52,6 @@
   --box-shadow--small: 0 0 10px rgba(0, 0, 0, 0.1);
   --box-shadow--medium: 0 0 20px rgba(0, 0, 0, 0.1);
   --box-shadow--large: 0 0 30px rgba(0, 0, 0, 0.1);
-  --absolute--top: 1.6rem;
-  --absolute--right: 3rem;
   --slider--thumb--size: 1.6rem;
   --slider--range--height: 0.5rem;
   --slider--range--min-width: 14rem;
