@@ -2,7 +2,7 @@ import {Component, EventEmitter, Inject, Input, Output, PLATFORM_ID} from '@angu
 import {isPlatformBrowser, NgClass, NgOptimizedImage} from '@angular/common';
 import {LOGO_HEIGHT, LOGO_WIDTH} from '../../../../../constants';
 import {ButtonComponent} from '../../../../shared/components/button/button.component';
-import {FormsModule} from '@angular/forms';
+import {FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterLink} from '@angular/router';
 
 @Component({
@@ -13,6 +13,7 @@ import {RouterLink} from '@angular/router';
     FormsModule,
     NgClass,
     RouterLink,
+    ReactiveFormsModule,
   ],
   templateUrl: './auth-layout.component.html',
   styleUrl: './auth-layout.component.css'
@@ -22,6 +23,7 @@ export class AuthLayoutComponent {
   @Input() title: string = '';
   @Input() link: string = '';
   @Input() linkText: string = '';
+  @Input() formGroup!: FormGroup;
   @Output() submitHandler: EventEmitter<Event> = new EventEmitter<Event>();
   logoHeight: number = LOGO_HEIGHT;
   logoWidth: number = LOGO_WIDTH;

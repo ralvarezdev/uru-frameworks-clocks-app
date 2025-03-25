@@ -5,7 +5,7 @@
     <div class="main-container__form-container__header-container">
       <h1 class="main-container__form-container__header-container__title">{{ title }}</h1>
     </div>
-    <ng-form class="main-container__form-container__content-container" (submit)="onSubmit($event)">
+    <form [formGroup]="formGroup" class="main-container__form-container__content-container" (ngSubmit)="onSubmit($event)">
       <ng-content></ng-content>
       <div class="main-container__form-container__content-container__footer-container">
         <div class="main-container__form-container__content-container__footer-container__buttons-container">
@@ -14,6 +14,6 @@
         </div>
         <a [routerLink]="link" class="main-container__form-container__content-container__footer-container__link">{{linkText}}</a>
       </div>
-    </ng-form>
+    </form>
   </div>
 </div>

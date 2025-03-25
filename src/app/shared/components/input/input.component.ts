@@ -1,7 +1,8 @@
-import {Component, Inject, Input, PLATFORM_ID, signal, ViewEncapsulation} from '@angular/core';
+import {Component, forwardRef, Inject, Input, PLATFORM_ID, signal, ViewEncapsulation} from '@angular/core';
 import {isPlatformBrowser, NgClass, NgStyle} from '@angular/common';
 import {ButtonComponent} from '../button/button.component';
 import {LabelComponent} from '../label/label.component';
+import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -9,13 +10,21 @@ import {LabelComponent} from '../label/label.component';
     NgStyle,
     ButtonComponent,
     LabelComponent,
-    NgClass
+    NgClass,
+    ReactiveFormsModule
   ],
   templateUrl: './input.component.html',
   styleUrl: './input.component.css',
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => InputComponent),
+      multi: true
+    }
+  ]
 })
-export class InputComponent {
+export class InputComponent implements ControlValueAccessor {
   isBrowser: boolean = false;
   passwordVisibility = signal<boolean>(true)
   @Input() id: string = '';
@@ -27,6 +36,8 @@ export class InputComponent {
   @Input() disabled: boolean = false;
   @Input() error: string = '...';
   @Input() showError: boolean = false;
+  private onChange: any = () => {};
+  private onTouched: any = () => {};
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.isBrowser = isPlatformBrowser(this.platformId)
@@ -37,5 +48,29 @@ export class InputComponent {
     if (this.isBrowser) {
       this.passwordVisibility.update(prevPasswordVisibility => !prevPasswordVisibility)
     }
+  }
+
+  // ControlValueAccessor methods
+  writeValue(value: any): void {
+    this.value = value;
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  setDisabledState?(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
+  onInput(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    this.value = input.value;
+    this.onChange(this.value);
+    this.onTouched();
   }
 }
