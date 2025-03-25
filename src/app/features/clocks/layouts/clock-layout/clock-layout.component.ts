@@ -4,6 +4,7 @@ import {ButtonComponent} from '../../../../shared/components/button/button.compo
 import {NgClass, NgOptimizedImage} from '@angular/common';
 import {Router} from '@angular/router';
 import {LOGO_HEIGHT, LOGO_WIDTH} from '../../../../../constants';
+import {AuthService} from '../../../auth/services/auth/auth.service';
 
 // Clocks ID by name
 const ClocksIDByName: Record<string, number> = {
@@ -54,7 +55,7 @@ export class ClockLayoutComponent {
   logoHeight: number = LOGO_HEIGHT;
   logoWidth: number = LOGO_WIDTH;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private authService: AuthService) {
     this.clockName = this.router.url.split('/').pop() || '';
     this.clockID = ClocksIDByName?.[this.clockName];
     this.pageNumber = this.clockID
@@ -73,5 +74,12 @@ export class ClockLayoutComponent {
     const newClockID = this.clockID < 10 ? this.clockID + 1 : 1;
     const newClockName = ClocksNameByID?.[newClockID];
     this.router.navigateByUrl('/clocks/' + newClockName, {skipLocationChange: false, replaceUrl: true});
+  }
+
+  // On Sign Out Click
+  onSignOutClick(event: Event): void {
+    this.authService.signOut().then(r =>
+      this.router.navigateByUrl('/sign-in', {skipLocationChange: false, replaceUrl: true})
+    );
   }
 }

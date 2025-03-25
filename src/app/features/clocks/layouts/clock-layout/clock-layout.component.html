@@ -1,14 +1,18 @@
 <div class="main-container">
   <img [height]="logoHeight" [width]="logoWidth" alt="logo"
        class="main-container__logo" ngSrc="/assets/images/klock--var2--logo.svg"/>
+    <app-button (clickHandler)="onSignOutClick($event)"
+                [ngClass]="{'button--primary--not-filled': true, 'main-container__sign-out': true}">
+      Sign Out
+    </app-button>
    <app-button (clickHandler)="onLeftArrowClick($event)"
-              [ngClass]="{'button--primary--circular': true, 'main-container__button': true, 'main-container__button--left': true}">
+              [ngClass]="{'button--primary--circular': true, 'main-container__arrow-button': true, 'main-container__arrow-button--left': true}">
     <span class="material-symbols-outlined" style="rotate: 180deg">
       chevron_right
     </span>
   </app-button>
   <app-button (clickHandler)="onRightArrowClick($event)"
-              [ngClass]="{'button--primary--circular': true, 'main-container__button': true, 'main-container__button--right': true}">
+              [ngClass]="{'button--primary--circular': true, 'main-container__arrow-button': true, 'main-container__arrow-button--right': true}">
     <span class="material-symbols-outlined">
       chevron_right
     </span>

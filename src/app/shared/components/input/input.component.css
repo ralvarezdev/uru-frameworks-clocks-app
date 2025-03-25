@@ -46,6 +46,7 @@
 .input-main-container__input-container__input__icon {
   display: grid;
   place-items: center;
+  padding: 0 var(--padding--extra-small);
 }
 
 /* Error */

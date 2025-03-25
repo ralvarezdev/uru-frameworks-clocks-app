@@ -5,11 +5,14 @@
     <div class="main-container__form-container__header-container">
       <h1 class="main-container__form-container__header-container__title">{{ title }}</h1>
     </div>
-    <ng-form class="main-container__form-container__content-container">
+    <ng-form class="main-container__form-container__content-container" (submit)="onSubmit($event)">
       <ng-content></ng-content>
       <div class="main-container__form-container__content-container__footer-container">
-        <app-button [ngClass]="{'button--primary--not-filled':true}" [type]="'reset'">Cancel</app-button>
-        <app-button [ngClass]="{'button--primary':true}" [type]="'submit'">Submit</app-button>
+        <div class="main-container__form-container__content-container__footer-container__buttons-container">
+          <app-button [ngClass]="{'button--primary--not-filled':true}" [type]="'reset'">Cancel</app-button>
+          <app-button [ngClass]="{'button--primary':true}" [type]="'submit'">Submit</app-button>
+        </div>
+        <a [routerLink]="link" class="main-container__form-container__content-container__footer-container__link">{{linkText}}</a>
       </div>
     </ng-form>
   </div>

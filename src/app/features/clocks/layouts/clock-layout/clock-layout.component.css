@@ -13,8 +13,15 @@
 .main-container__logo {
   position: absolute;
   top: var(--padding--small);
-  right: var(--padding--medium);
+  left: var(--padding--medium);
   object-fit: cover;
+}
+
+/* Sign out button */
+.main-container__sign-out {
+  position: absolute;
+  top: var(--padding--small);
+  right: var(--padding--medium);
 }
 
 /* Title */
@@ -28,13 +35,13 @@
 }
 
 /* Arrow */
-.main-container__button span {
+.main-container__arrow-button span {
   color: var(--grey--lightest);
   font-size: var(--font-size--large);
 }
 
 /* Left arrow */
-.main-container__button--left {
+.main-container__arrow-button--left {
   position: absolute;
   transform: translateY(-50%);
   top: 50%;
@@ -42,7 +49,7 @@
 }
 
 /* Right arrow */
-.main-container__button--right {
+.main-container__arrow-button--right {
   position: absolute;
   transform: translateY(-50%);
   top: 50%;

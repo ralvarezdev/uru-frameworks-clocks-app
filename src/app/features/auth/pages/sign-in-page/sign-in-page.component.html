@@ -1,6 +1,6 @@
-<app-auth-layout [title]="title">
-  <app-input [id]="'sign-in--email'" [label]="'Email'" [placeholder]="'Enter your email'" [required]="true"
+<app-auth-layout [title]="title" (submitHandler)="submitHandler()" [link]="link" [linkText]="linkText">
+  <app-input [id]="'email'" [label]="'Email'" [placeholder]="'Enter your email'" [required]="true"
              [type]="'email'"></app-input>
-  <app-input [id]="'sign-in--password'" [label]="'Password'" [placeholder]="'Enter your password'" [required]="true"
+  <app-input [id]="'password'" [label]="'Password'" [placeholder]="'Enter your password'" [required]="true"
              [type]="'password'"></app-input>
 </app-auth-layout>

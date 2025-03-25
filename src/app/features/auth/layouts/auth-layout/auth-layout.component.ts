@@ -1,8 +1,9 @@
-import {Component, Input} from '@angular/core';
-import {NgClass, NgOptimizedImage} from '@angular/common';
+import {Component, EventEmitter, Inject, Input, Output, PLATFORM_ID} from '@angular/core';
+import {isPlatformBrowser, NgClass, NgOptimizedImage} from '@angular/common';
 import {LOGO_HEIGHT, LOGO_WIDTH} from '../../../../../constants';
 import {ButtonComponent} from '../../../../shared/components/button/button.component';
 import {FormsModule} from '@angular/forms';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-auth-layout',
@@ -11,12 +12,29 @@ import {FormsModule} from '@angular/forms';
     ButtonComponent,
     FormsModule,
     NgClass,
+    RouterLink,
   ],
   templateUrl: './auth-layout.component.html',
   styleUrl: './auth-layout.component.css'
 })
 export class AuthLayoutComponent {
+  isBrowser: boolean = false;
   @Input() title: string = '';
+  @Input() link: string = '';
+  @Input() linkText: string = '';
+  @Output() submitHandler: EventEmitter<Event> = new EventEmitter<Event>();
   logoHeight: number = LOGO_HEIGHT;
   logoWidth: number = LOGO_WIDTH;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+
+  // Emit submit event
+  onSubmit(event: Event) {
+    if (this.isBrowser) {
+      event.preventDefault()
+      this.submitHandler.emit(event);
+    }
+  }
 }

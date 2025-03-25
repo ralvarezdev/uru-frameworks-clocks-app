@@ -29,7 +29,7 @@ export class InputComponent {
   @Input() showError: boolean = false;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    isPlatformBrowser(this.platformId)
+    this.isBrowser = isPlatformBrowser(this.platformId)
   }
 
   // Toggle password visibility

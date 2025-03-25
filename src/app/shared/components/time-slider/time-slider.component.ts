@@ -51,21 +51,6 @@ export class TimeSliderComponent implements OnInit, OnDestroy {
     this.secondSliderValue.setValue(0, { emitEvent: false });
   }
 
-  // Hour on input change
-  onHourChange(hour: number | null): void {
-    this.hourSliderValue.setValue(hour);
-  }
-
-  // Minute on input change
-  onMinuteChange(minute: number | null): void {
-    this.minuteSliderValue.setValue(minute);
-  }
-
-  // Second on input change
-  onSecondChange(second: number | null): void {
-    this.secondSliderValue.setValue(second);
-  }
-
   // On Reset
   onReset(event: Event) {
     this.timeService.reset()

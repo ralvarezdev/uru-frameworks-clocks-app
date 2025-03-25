@@ -1,6 +1,6 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import {TimeService} from '../../services/time/time.service';
-import {NgForOf, NgStyle} from '@angular/common';
+import {NgStyle} from '@angular/common';
 import {BaseClockComponent} from '../base-clock/base-clock.component';
 
 @Component({
