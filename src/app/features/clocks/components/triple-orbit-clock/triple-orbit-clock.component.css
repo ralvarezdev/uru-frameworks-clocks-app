@@ -1,0 +1,102 @@
+/* Triple Orbit Clock */
+.triple-orbit-clock {
+  --hours--orbit--size: 100px;
+  --hours--orbit--width: 4px;
+  --hours--planet--size: 30px;
+  --minutes--orbit--size: 75px;
+  --minutes--orbit--width: 3px;
+  --minutes--planet--size: 20px;
+  --seconds--orbit--size: 50px;
+  --seconds--orbit--width: 2px;
+  --seconds--planet--size: 10px;
+
+  width: 200px;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  rotate: 45deg;
+}
+
+/* Hours orbit */
+.triple-orbit-clock__hours-container__orbit{
+  position: relative;
+  width: calc(var(--hours--orbit--size) + var(--hours--orbit--width));
+  height: calc(var(--hours--orbit--size) + var(--hours--orbit--width));
+  border: var(--hours--orbit--width) solid var(--color--dark-primary);
+  z-index: 3;
+}
+
+/* Minutes container */
+.triple-orbit-clock__minutes-container {
+  position: relative;
+  width: calc(var(--minutes--orbit--size) + var(--minutes--orbit--width));
+  height: calc(var(--minutes--orbit--size) + var(--minutes--orbit--width));
+  transform: translate(calc(((-1 * var(--minutes--orbit--size) + var(--minutes--planet--size)) / 2) + var(--minutes--orbit--width)), calc(((-1 * var(--minutes--orbit--size) + var(--minutes--planet--size))/ 2) + var(--minutes--orbit--width)));
+}
+
+/* Minutes orbit */
+.triple-orbit-clock__minutes-container__orbit{
+  position: relative;
+  width: var(--minutes--orbit--size);
+  height: var(--minutes--orbit--size);
+  border: var(--minutes--orbit--width) solid var(--color--medium-primary);
+  z-index: 2;
+}
+
+/* Seconds container */
+.triple-orbit-clock__seconds-container {
+  position: absolute;
+  width: calc(var(--seconds--orbit--size) + var(--seconds--orbit--width));
+  height: calc(var(--seconds--orbit--size) + var(--seconds--orbit--width));
+   transform: translate(calc((-1 * var(--seconds--orbit--size) - var(--minutes--orbit--width) + var(--minutes--planet--size)) / 2), calc((-1 * var(--seconds--orbit--size) - var(--minutes--orbit--width) + var(--minutes--planet--size)) / 2));
+}
+
+/* Seconds orbit */
+.triple-orbit-clock__seconds-container__orbit{
+  width:  var(--seconds--orbit--size);
+  height:  var(--seconds--orbit--size);
+  border: var(--seconds--orbit--width) solid var(--color--light-primary);
+  z-index: 1;
+}
+
+.triple-orbit-clock__hours-container__orbit,
+.triple-orbit-clock__minutes-container__orbit,
+.triple-orbit-clock__seconds-container__orbit{
+  border-radius: 50%;
+}
+
+/* Hours planet */
+.triple-orbit-clock__hours-container__planet {
+  width: var(--hours--planet--size);
+  height: var(--hours--planet--size);
+  background-color: var(--color--dark-primary);
+  border-radius: 50%;
+  outline: var(--hours--orbit--width) solid white;
+  position: absolute;
+  transform: translate(calc((-1 * var(--hours--orbit--width)) / 2), calc((-1 * var(--hours--orbit--width)) / 2));
+  z-index: 3;
+}
+
+/* Minutes planet */
+.triple-orbit-clock__minutes-container__planet {
+  width: var(--minutes--planet--size);
+  height: var(--minutes--planet--size);
+  background-color: var(--color--medium-primary);
+  border-radius: 50%;
+  position: absolute;
+  outline: var(--minutes--orbit--width) solid white;
+  transform: translate(calc((-1 * var(--minutes--orbit--width)) / 2), calc((-1 * var(--minutes--orbit--width)) / 2));
+  z-index: 2;
+}
+
+/* Seconds planet */
+.triple-orbit-clock__seconds-container__planet {
+  width: var(--seconds--planet--size);
+  height: var(--seconds--planet--size);
+  background-color: var(--color--light-primary);
+  outline: var(--seconds--orbit--width) solid white;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(calc((var(--seconds--orbit--width)) / 2), calc((var(--seconds--orbit--width)) / 2));
+  z-index: 1;
+}

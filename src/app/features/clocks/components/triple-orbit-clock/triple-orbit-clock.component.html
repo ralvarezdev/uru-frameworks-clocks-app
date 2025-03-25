@@ -1,0 +1,17 @@
+<div class="triple-orbit-clock">
+  <div class="triple-orbit-clock__hours-container">
+    <div class="triple-orbit-clock__hours-container__orbit" [ngStyle]="{rotate: getNormalizedHoursOrbitAngle()+'deg'}">
+      <div class="triple-orbit-clock__hours-container__planet"></div>
+      <div class="triple-orbit-clock__minutes-container">
+        <div class="triple-orbit-clock__minutes-container__orbit" [ngStyle]="{rotate: getNormalizedMinutesOrbitAngle()+'deg'}">
+          <div class="triple-orbit-clock__minutes-container__planet"></div>
+          <div class="triple-orbit-clock__seconds-container">
+            <div class="triple-orbit-clock__seconds-container__orbit" [ngStyle]="{rotate: getNormalizedSecondsOrbitAngle()+'deg'}">
+            <div class="triple-orbit-clock__seconds-container__planet"></div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,18 +1,18 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {LedPageComponent} from './led-page.component';
+import {TripleOrbitPageComponent} from './triple-orbit-page.component';
 
 describe('LedPageComponent', () => {
-  let component: LedPageComponent;
-  let fixture: ComponentFixture<LedPageComponent>;
+  let component: TripleOrbitPageComponent;
+  let fixture: ComponentFixture<TripleOrbitPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LedPageComponent]
+      imports: [TripleOrbitPageComponent]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(LedPageComponent);
+    fixture = TestBed.createComponent(TripleOrbitPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

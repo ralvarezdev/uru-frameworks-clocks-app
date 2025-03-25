@@ -11,12 +11,12 @@ const ClocksIDByName: Record<string, number> = {
   'analog': 2,
   'binary': 3,
   'digital': 4,
-  'led': 5,
-  'seven-segment': 6,
-  'morse-code': 7,
-  'mosaic': 8,
-  'rgb': 9,
-  'roman': 10
+  'seven-segment': 5,
+  'morse-code': 6,
+  'mosaic': 7,
+  'rgb': 8,
+  'roman': 9,
+  'triple-orbit': 10
 }
 
 // Clocks name by ID
@@ -25,12 +25,12 @@ const ClocksNameByID: Record<number, string> = {
   2: 'analog',
   3: 'binary',
   4: 'digital',
-  5: 'led',
-  6: 'seven-segment',
-  7: 'morse-code',
-  8: 'mosaic',
-  9: 'rgb',
-  10: 'roman'
+  5: 'seven-segment',
+  6: 'morse-code',
+  7: 'mosaic',
+  8: 'rgb',
+  9: 'roman',
+  10: 'triple-orbit'
 }
 
 @Component({
