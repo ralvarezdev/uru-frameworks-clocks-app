@@ -1,6 +1,4 @@
 import {Injectable} from '@angular/core';
-import {ApiService} from '../../../../shared/services/api.service';
-import {CookieService} from 'ngx-cookie-service';
 import config from '../../../../../config';
 import {initializeApp} from "firebase/app";
 import {getAuth, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut, Auth} from "firebase/auth";
@@ -12,7 +10,7 @@ export class AuthService {
   auth: Auth|null = null
   provider: GoogleAuthProvider|null = null
 
-  constructor(private apiService: ApiService, private cookieService: CookieService) {
+  constructor() {
     // Initialize Firebase
     initializeApp({
       apiKey: config.FIREBASE_API_KEY,
