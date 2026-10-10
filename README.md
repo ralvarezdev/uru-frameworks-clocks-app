@@ -1,59 +1,33 @@
-# UruFrameworksClocksApp
+# uru-frameworks-clocks-app
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+An Angular 19 app that shows the current time on ten different clock faces, behind Firebase authentication. Built for the Frameworks course at Universidad Rafael Urdaneta.
 
-## Development server
+**Note:** This repository is archived and read-only.
 
-To start a local development server, run:
+## Features
 
-```bash
-ng serve
-```
+- **Clock faces** — Abacus, analog, binary, digital, Morse code, mosaic, RGB, Roman, seven-segment and triple-orbit, each on its own `/clocks/<name>` route.
+- **Authentication** — Sign in and sign up with email and password or Google through Firebase Auth. Clock routes are protected by an auth guard; `/sign-in` and `/sign-up` by a not-auth guard.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Development
 
 ```bash
-ng generate component component-name
+npm install
+ng serve        # http://localhost:4200/
+ng build        # output in dist/
+ng test         # Karma unit tests
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The auth service imports Firebase settings from a `config` module at the repository root (`FIREBASE_API_KEY`, `FIREBASE_AUTH_DOMAIN`, `FIREBASE_PROJECT_ID`, `FIREBASE_STORAGE_BUCKET`, `FIREBASE_MESSAGING_SENDER_ID`, `FIREBASE_APP_ID`, `FIREBASE_MEASUREMENT_ID`). That file is not committed, so you must create it with your own Firebase project values before the app compiles.
 
-```bash
-ng generate --help
-```
+## Project structure
 
-## Building
+- **`src/app/features/auth`** — Guards, auth layout, sign-in and sign-up pages, auth service.
+- **`src/app/features/clocks`** — Clock components, pages, layout and time service.
+- **`src/app/shared`** — Reusable button, input, label and slider components, and the not-found page.
 
-To build the project run:
+Generated with Angular CLI 19.2.1; see the [Angular CLI reference](https://angular.dev/tools/cli) for `ng generate` and other commands.
 
-```bash
-ng build
-```
+## License
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+GPL-3.0. See [LICENSE](LICENSE).
